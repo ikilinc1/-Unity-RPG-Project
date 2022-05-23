@@ -832,6 +832,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1961117811}
+    - target: {fileID: 2411083769191112980, guid: 5a38009bb9f56dd4f9813b29b4f54fe3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4596425974307090516, guid: 5a38009bb9f56dd4f9813b29b4f54fe3, type: 3}
       propertyPath: m_Name
       value: Pub-Bar
@@ -1341,6 +1345,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1620282321}
+    - target: {fileID: 9120376002649245271, guid: 2438a0147f0ad7741a0600c822a86e6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2438a0147f0ad7741a0600c822a86e6e, type: 3}
 --- !u!43 &728998907
