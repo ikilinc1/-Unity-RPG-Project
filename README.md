@@ -6,6 +6,7 @@
 Used Packages (Unity Registry)  
 - ProBuilder 5.0.4
 - ProGrids 3.0.3-preview.6  
+- Post Processing 3.2.2
 
 Used Assets (Unity Store)  
 - https://assetstore.unity.com/packages/3d/characters/medieval-cartoon-warriors-90079
