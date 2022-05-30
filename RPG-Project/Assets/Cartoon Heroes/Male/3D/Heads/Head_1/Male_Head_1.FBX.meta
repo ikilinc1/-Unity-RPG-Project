@@ -1,78 +1,212 @@
 fileFormatVersion: 2
 guid: 3ed30173e52bad9469c5720c7646c3de
-timeCreated: 1576412053
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Character Head
-    100004: Male Head Mesh
-    100006: Character
-    100008: Character Head 1
-    100010: Character Neck
-    100012: Character Pelvis
-    100014: Character Spine
-    100016: Character Spine1
-    100018: Character Spine2
-    100020: Male_Head_1_Mesh
-    100022: Head_1_Mesh
-    100024: Character Chin
-    100026: Character Jawline
-    100028: Character L Ear
-    100030: Character L Eye
-    100032: Character L Eyebrow
-    100034: Character Mouth
-    100036: Character Nose
-    100038: Character R Ear
-    100040: Character R Eye
-    100042: Character R Eyebrow
-    100044: Male_Head_1
-    400000: //RootNode
-    400002: Character Head
-    400004: Male Head Mesh
-    400006: Character
-    400008: Character Head 1
-    400010: Character Neck
-    400012: Character Pelvis
-    400014: Character Spine
-    400016: Character Spine1
-    400018: Character Spine2
-    400020: Male_Head_1_Mesh
-    400022: Head_1_Mesh
-    400024: Character Chin
-    400026: Character Jawline
-    400028: Character L Ear
-    400030: Character L Eye
-    400032: Character L Eyebrow
-    400034: Character Mouth
-    400036: Character Nose
-    400038: Character R Ear
-    400040: Character R Eye
-    400042: Character R Eyebrow
-    400044: Male_Head_1
-    2100000: No Name
-    2100002: Male_Head_1
-    2300000: //RootNode
-    2300002: Male Head Mesh
-    2300004: Character Head 1
-    2300006: Male_Head_1_Mesh
-    2300008: Character Head
-    3300000: //RootNode
-    3300002: Male Head Mesh
-    3300004: Character Head 1
-    3300006: Male_Head_1_Mesh
-    3300008: Character Head
-    4300000: Male Head Mesh
-    4300002: Character Head
-    4300004: Male_Head_1_Mesh
-    4300006: Head_1_Mesh
-    4300008: Male_Head_1
-    9500000: //RootNode
-    13700000: Male_Head_1_Mesh
-    13700002: Character Head
-    13700004: Head_1_Mesh
-    13700006: Male_Head_1
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Character Head
+  - first:
+      1: 100004
+    second: Male Head Mesh
+  - first:
+      1: 100006
+    second: Character
+  - first:
+      1: 100008
+    second: Character Head 1
+  - first:
+      1: 100010
+    second: Character Neck
+  - first:
+      1: 100012
+    second: Character Pelvis
+  - first:
+      1: 100014
+    second: Character Spine
+  - first:
+      1: 100016
+    second: Character Spine1
+  - first:
+      1: 100018
+    second: Character Spine2
+  - first:
+      1: 100020
+    second: Male_Head_1_Mesh
+  - first:
+      1: 100022
+    second: Head_1_Mesh
+  - first:
+      1: 100024
+    second: Character Chin
+  - first:
+      1: 100026
+    second: Character Jawline
+  - first:
+      1: 100028
+    second: Character L Ear
+  - first:
+      1: 100030
+    second: Character L Eye
+  - first:
+      1: 100032
+    second: Character L Eyebrow
+  - first:
+      1: 100034
+    second: Character Mouth
+  - first:
+      1: 100036
+    second: Character Nose
+  - first:
+      1: 100038
+    second: Character R Ear
+  - first:
+      1: 100040
+    second: Character R Eye
+  - first:
+      1: 100042
+    second: Character R Eyebrow
+  - first:
+      1: 100044
+    second: Male_Head_1
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Character Head
+  - first:
+      4: 400004
+    second: Male Head Mesh
+  - first:
+      4: 400006
+    second: Character
+  - first:
+      4: 400008
+    second: Character Head 1
+  - first:
+      4: 400010
+    second: Character Neck
+  - first:
+      4: 400012
+    second: Character Pelvis
+  - first:
+      4: 400014
+    second: Character Spine
+  - first:
+      4: 400016
+    second: Character Spine1
+  - first:
+      4: 400018
+    second: Character Spine2
+  - first:
+      4: 400020
+    second: Male_Head_1_Mesh
+  - first:
+      4: 400022
+    second: Head_1_Mesh
+  - first:
+      4: 400024
+    second: Character Chin
+  - first:
+      4: 400026
+    second: Character Jawline
+  - first:
+      4: 400028
+    second: Character L Ear
+  - first:
+      4: 400030
+    second: Character L Eye
+  - first:
+      4: 400032
+    second: Character L Eyebrow
+  - first:
+      4: 400034
+    second: Character Mouth
+  - first:
+      4: 400036
+    second: Character Nose
+  - first:
+      4: 400038
+    second: Character R Ear
+  - first:
+      4: 400040
+    second: Character R Eye
+  - first:
+      4: 400042
+    second: Character R Eyebrow
+  - first:
+      4: 400044
+    second: Male_Head_1
+  - first:
+      21: 2100000
+    second: No Name
+  - first:
+      21: 2100002
+    second: Male_Head_1
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Male Head Mesh
+  - first:
+      23: 2300004
+    second: Character Head 1
+  - first:
+      23: 2300006
+    second: Male_Head_1_Mesh
+  - first:
+      23: 2300008
+    second: Character Head
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Male Head Mesh
+  - first:
+      33: 3300004
+    second: Character Head 1
+  - first:
+      33: 3300006
+    second: Male_Head_1_Mesh
+  - first:
+      33: 3300008
+    second: Character Head
+  - first:
+      43: 4300000
+    second: Male Head Mesh
+  - first:
+      43: 4300002
+    second: Character Head
+  - first:
+      43: 4300004
+    second: Male_Head_1_Mesh
+  - first:
+      43: 4300006
+    second: Head_1_Mesh
+  - first:
+      43: 4300008
+    second: Male_Head_1
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Male_Head_1_Mesh
+  - first:
+      137: 13700002
+    second: Character Head
+  - first:
+      137: 13700004
+    second: Head_1_Mesh
+  - first:
+      137: 13700006
+    second: Male_Head_1
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -80,7 +214,7 @@ ModelImporter:
       name: Male_Head_1
     second: {fileID: 2100000, guid: 25e381a33d04932429a8bd13baaefaee, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -89,6 +223,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -97,6 +232,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -111,21 +247,33 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -133,10 +281,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -146,14 +297,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
