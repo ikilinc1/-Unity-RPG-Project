@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4370837261869359462}
   m_LocalRotation: {x: 0.33100694, y: -0.00000001623643, z: 0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: -0.43725586, y: 4.6140723, z: -16.947144}
+  m_LocalPosition: {x: -4.969818, y: 5.9183106, z: -18.589508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 6942691047440457638}
+  m_Follow: {fileID: 6942691047440457638}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -253,6 +253,10 @@ PrefabInstance:
     - target: {fileID: 5544578975120613559, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}
       propertyPath: m_Name
       value: Player1Female4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594911367354959897, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}

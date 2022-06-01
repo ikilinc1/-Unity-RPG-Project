@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021925930240817684}
   m_LocalRotation: {x: 0.33100694, y: -0.00000001623643, z: 0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: -0.43725586, y: 4.6140723, z: -16.947144}
+  m_LocalPosition: {x: -2.7222595, y: 4.7862725, z: -18.143463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 3654683674662797557}
+  m_Follow: {fileID: 3654683674662797557}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1Male2
       objectReference: {fileID: 0}
+    - target: {fileID: 7713062618599959308, guid: eb03ec171583fb54a8dfdf453c924848, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb03ec171583fb54a8dfdf453c924848, type: 3}
 --- !u!1 &3652203259901707497 stripped
@@ -261,6 +265,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7663020044194000542, guid: eb03ec171583fb54a8dfdf453c924848, type: 3}
   m_PrefabInstance: {fileID: 6410803301269809783}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5719207818924294563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652203259901707497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 2021925930240817685}
 --- !u!195 &6284080740912823083
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -283,19 +300,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5719207818924294563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3652203259901707497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCam: {fileID: 2021925930240817685}
 --- !u!4 &3654683674662797557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7660540308096330370, guid: eb03ec171583fb54a8dfdf453c924848, type: 3}

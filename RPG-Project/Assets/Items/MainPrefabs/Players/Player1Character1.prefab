@@ -119,8 +119,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6730067269014390897}
-  m_LocalRotation: {x: 0.33100694, y: 0.000000016236426, z: -0.0000000056954317, w: 0.9436283}
-  m_LocalPosition: {x: 0.042022705, y: 6.455816, z: -12.485687}
+  m_LocalRotation: {x: 0.33100694, y: 0.00000001623643, z: -0.0000000056954326, w: 0.9436283}
+  m_LocalPosition: {x: 1.1846008, y: 6.6640687, z: -11.578033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 4059048985652997257}
+  m_Follow: {fileID: 4059048985652997257}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -206,6 +206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3927671226326641294}
     m_Modifications:
+    - target: {fileID: 8073052060184148528, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8163629887872560212, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -261,6 +265,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8169086750339617438, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
   m_PrefabInstance: {fileID: 5269116639536103645}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2895242551297152211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053737419381510723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 6730067269014390896}
 --- !u!195 &2959459836367272291
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -283,19 +300,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2895242551297152211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4053737419381510723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCam: {fileID: 6730067269014390896}
 --- !u!4 &4059048985652997257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8163629887872560212, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
