@@ -24,5 +24,10 @@ public class Cursors : MonoBehaviour
         {
             cursorImage.sprite = cursorHand;
         }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            cursorImage.sprite = cursorBasic;
+        }
     }
 }
