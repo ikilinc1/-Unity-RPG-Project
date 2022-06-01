@@ -35,6 +35,7 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/2d/textures-materials/hand-painted-textures-31347
 - https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
 - https://assetstore.unity.com/packages/2d/textures-materials/stone/hand-painted-stone-textures-28645
+- https://assetstore.unity.com/packages/2d/textures-materials/basic-rpg-cursors-139404
 
 Used Assets (SketchFab)  
 - https://sketchfab.com/3d-models/stylized-rock-agustin-honnun-ae21c3d47cb14323a3bb06ccb562e368
