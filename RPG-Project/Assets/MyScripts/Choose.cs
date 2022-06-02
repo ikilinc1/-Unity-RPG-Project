@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Choose : MonoBehaviour
 {
     public GameObject[] characters;
     private int p = 0;
+    public Text playerName;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void Next()
     {
         if (p < characters.Length - 1)
@@ -31,5 +28,12 @@ public class Choose : MonoBehaviour
             p--;
             characters[p].SetActive(true);
         }
+    }
+
+    public void Accept()
+    {
+        SaveScript.pchar = p;
+        SaveScript.pname = playerName.text;
+        SceneManager.LoadScene(1);
     }
 }
