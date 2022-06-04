@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
     public CinemachineVirtualCamera playerCam;
     private Vector3 pos;
     private Vector3 currPos;
+
+    public static bool canMove = true; 
     
     // Start is called before the first frame update
     void Start()
@@ -45,11 +47,14 @@ public class PlayerMove : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            if (Camera.main != null) ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            if (canMove)
             {
-                nav.destination = hit.point;
+                if (Camera.main != null) ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    nav.destination = hit.point;
+                }
             }
         }
 
