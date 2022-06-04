@@ -119,8 +119,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4370837261869359462}
-  m_LocalRotation: {x: 0.33100694, y: -0.00000001623643, z: 0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: -4.969818, y: 5.9183106, z: -18.589508}
+  m_LocalRotation: {x: 0.33100694, y: 0.000000016238827, z: -0.0000000056962732, w: 0.9436283}
+  m_LocalPosition: {x: -4.969818, y: 5.91831, z: -18.589508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3934830206398538280}
   m_Layer: 0
   m_Name: Player1Character5
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1Female4
       objectReference: {fileID: 0}
+    - target: {fileID: 5544578975120613559, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5594911367354959897, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -300,6 +304,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 4370837261869359463}
+--- !u!65 &3257360131882639455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938925000984961388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &1649646400092951434
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938925000984961388}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &6942691047440457638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5541444101491777149, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}
