@@ -42,5 +42,13 @@ Used Assets (SketchFab)
 - https://sketchfab.com/3d-models/stylized-character-pedestal-agustin-honnun-6e40b7b727034ee7a2949dcbadddc919
 - https://sketchfab.com/3d-models/stylized-fences-set-agustin-honnun-de8a95edea634ff5bed2c2c6c7c5d1ae
 
+Icons used:  
+- https://opengameart.org/content/free-rpg-icons-2
+- https://opengameart.org/content/resouces-pack-1
+- https://opengameart.org/content/alchemical-ingredient-icons-pack
+- https://opengameart.org/content/rpg-book-icons-pack
+- https://opengameart.org/content/attack-icons-wesnoth
+- https://opengameart.org/content/rpg-icons-set
+
 Unity version-->2021.3.3f1  
 Current proggress --> Work in progress.
