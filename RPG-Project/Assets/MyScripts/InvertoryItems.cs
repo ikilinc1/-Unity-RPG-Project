@@ -14,6 +14,12 @@ public class InvertoryItems : MonoBehaviour
     public Sprite[] icons;
     public Sprite emptyIcon;
 
+    public static int redMushrooms = 0;
+    public static int purpleMushrooms = 0;
+    public static int brownMushrooms = 0;
+    public static int blueFlowers = 0;
+    public static int redFlowers = 0;
+    
     public static int newIcon = 0;
     public static bool iconUpdate = false;
     private int max;
@@ -23,7 +29,13 @@ public class InvertoryItems : MonoBehaviour
         inventoryMenu.SetActive(false);
         openBook.SetActive(false);
         closedBook.SetActive(true);
-        max = emptySlots.Length;
+        max = emptySlots.Length; 
+        //TEMP
+        redMushrooms = 0; 
+        purpleMushrooms = 0; 
+        brownMushrooms = 0; 
+        blueFlowers = 0; 
+        redFlowers = 0;
     }
 
     // Update is called once per frame
@@ -62,7 +74,7 @@ public class InvertoryItems : MonoBehaviour
 
     IEnumerator Reset()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         iconUpdate = false;
         max = emptySlots.Length;
     }
