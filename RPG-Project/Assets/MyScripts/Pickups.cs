@@ -11,6 +11,8 @@ public class Pickups : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            InvertoryItems.newIcon = number;
+            InvertoryItems.iconUpdate = true;
             Destroy(gameObject);
         }
     }
