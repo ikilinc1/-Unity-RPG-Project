@@ -18,47 +18,47 @@ public class Pickups : MonoBehaviour
         {
             if (redMushroom)
             {
-                if (InvertoryItems.redMushrooms == 0)
+                if (InventoryItems.redMushrooms == 0)
                 {
                     DisplayIcons();
                 }
-                InvertoryItems.redMushrooms++;
+                InventoryItems.redMushrooms++;
                 Destroy(gameObject);
             }
             else if (purpleMushroom)
             {
-                if (InvertoryItems.purpleMushrooms == 0)
+                if (InventoryItems.purpleMushrooms == 0)
                 {
                     DisplayIcons();
                 }
-                InvertoryItems.purpleMushrooms++;
+                InventoryItems.purpleMushrooms++;
                 Destroy(gameObject);
             }
             else if (brownMushroom)
             {
-                if (InvertoryItems.brownMushrooms == 0)
+                if (InventoryItems.brownMushrooms == 0)
                 {
                     DisplayIcons();
                 }
-                InvertoryItems.brownMushrooms++;
+                InventoryItems.brownMushrooms++;
                 Destroy(gameObject);
             }
             else if (blueFlower)
             {
-                if (InvertoryItems.blueFlowers == 0)
+                if (InventoryItems.blueFlowers == 0)
                 {
                     DisplayIcons();
                 }
-                InvertoryItems.blueFlowers++;
+                InventoryItems.blueFlowers++;
                 Destroy(gameObject);
             }
             else if (redFlower)
             {
-                if (InvertoryItems.redFlowers == 0)
+                if (InventoryItems.redFlowers == 0)
                 {
                     DisplayIcons();
                 }
-                InvertoryItems.redFlowers++;
+                InventoryItems.redFlowers++;
                 Destroy(gameObject);
             }
             else
@@ -71,7 +71,7 @@ public class Pickups : MonoBehaviour
 
     void DisplayIcons()
     {
-        InvertoryItems.newIcon = number;
-        InvertoryItems.iconUpdate = true;
+        InventoryItems.newIcon = number;
+        InventoryItems.iconUpdate = true;
     }
 }

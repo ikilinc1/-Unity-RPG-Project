@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InvertoryItems : MonoBehaviour
+public class InventoryItems : MonoBehaviour
 {
     public GameObject inventoryMenu;
     public GameObject openBook;
@@ -49,6 +49,7 @@ public class InvertoryItems : MonoBehaviour
                 {
                     max = i;
                     emptySlots[i].sprite = icons[newIcon];
+                    emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = newIcon;
                 }
             }
 

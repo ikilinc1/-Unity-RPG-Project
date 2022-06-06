@@ -10,6 +10,7 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     public Text message;
     private bool displaying = true;
     private bool overIcon = false;
+    public int objectType = 0;
 
     private Vector3 screenPoint;
     // Start is called before the first frame update
@@ -58,6 +59,29 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
 
     void MessageDisplay()
     {
-        message.text = "empty";
+        if (objectType == 0)
+        {
+            message.text = "empty";
+        }
+        if (objectType == 1)
+        {
+            message.text = InventoryItems.redMushrooms.ToString() + " red mushrooms to be used in potions";
+        }
+        if (objectType == 2)
+        {
+            message.text = InventoryItems.purpleMushrooms.ToString() + " purple mushrooms to be used in potions";
+        }
+        if (objectType == 3)
+        {
+            message.text = InventoryItems.brownMushrooms.ToString() + " brown mushrooms to be used in potions";
+        }
+        if (objectType == 4)
+        {
+            message.text = InventoryItems.blueFlowers.ToString() + " blue flowers to be used in potions";
+        }
+        if (objectType == 5)
+        {
+            message.text = InventoryItems.redFlowers.ToString() + " red flowers to be used in potions";
+        }
     }
 }
