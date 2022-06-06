@@ -65,23 +65,68 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         }
         if (objectType == 1)
         {
-            message.text = InventoryItems.redMushrooms.ToString() + " red mushrooms to be used in potions";
+            message.text = InventoryItems.redMushrooms.ToString() + " red mushrooms to be used";
         }
         if (objectType == 2)
         {
-            message.text = InventoryItems.purpleMushrooms.ToString() + " purple mushrooms to be used in potions";
+            message.text = InventoryItems.purpleMushrooms.ToString() + " purple mushrooms to be used";
         }
         if (objectType == 3)
         {
-            message.text = InventoryItems.brownMushrooms.ToString() + " brown mushrooms to be used in potions";
+            message.text = InventoryItems.brownMushrooms.ToString() + " brown mushrooms to be used";
         }
         if (objectType == 4)
         {
-            message.text = InventoryItems.blueFlowers.ToString() + " blue flowers to be used in potions";
+            message.text = InventoryItems.blueFlowers.ToString() + " blue flowers to be used";
         }
         if (objectType == 5)
         {
-            message.text = InventoryItems.redFlowers.ToString() + " red flowers to be used in potions";
+            message.text = InventoryItems.redFlowers.ToString() + " red flowers to be used";
+        }
+        if (objectType == 6)
+        {
+            message.text = InventoryItems.roots.ToString()+" roots to be used";
+        }
+        if (objectType == 7)
+        {
+            message.text = InventoryItems.leafDews.ToString() + " leaf dews to be used";
+        }
+        if (objectType == 8)
+        {
+            message.text = "Special key to open chests";
+        }
+        if (objectType == 9)
+        {
+            // meh change maybe
+            message.text = InventoryItems.pinkEggs.ToString() + " pink eggs";
+        }
+        if (objectType == 10)
+        {
+            message.text = InventoryItems.bluePotions.ToString() + " blue potions";
+        }
+        if (objectType == 11)
+        {
+            message.text = InventoryItems.purplePotions.ToString() + " purple potions";
+        }
+        if (objectType == 12)
+        {
+            message.text = InventoryItems.greenPotions.ToString() + " green potions";
+        }
+        if (objectType == 13)
+        {
+            message.text = InventoryItems.redPotions.ToString() + " red potions";
+        }
+        if (objectType == 14)
+        {
+            message.text = InventoryItems.breads.ToString() + " breads to eat";
+        }
+        if (objectType == 15)
+        {
+            message.text = InventoryItems.cheese.ToString() + " cheese wheels to eat";
+        }
+        if (objectType == 16)
+        {
+            message.text = InventoryItems.meat.ToString() + " kg meat to eat";
         }
     }
 }
