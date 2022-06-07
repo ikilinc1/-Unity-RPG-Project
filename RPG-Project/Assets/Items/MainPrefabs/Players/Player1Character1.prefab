@@ -119,8 +119,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6730067269014390897}
-  m_LocalRotation: {x: 0.33100694, y: 0.00000001623643, z: -0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: 1.1846008, y: 6.664069, z: -11.578033}
+  m_LocalRotation: {x: 0.33100694, y: -0.000000016236426, z: 0.0000000056954317, w: 0.9436283}
+  m_LocalPosition: {x: 1.1846008, y: 6.6640687, z: -11.578033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -269,6 +269,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8169086750339617438, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
   m_PrefabInstance: {fileID: 5269116639536103645}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &6208715897160637690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053737419381510723}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7695172169629032192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053737419381510723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2895242551297152211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +320,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4053737419381510723}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
@@ -300,39 +329,10 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &7695172169629032192
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4053737419381510723}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &6208715897160637690
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4053737419381510723}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &4059048985652997257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8163629887872560212, guid: 5e16b5b7a380b26488b77600f8cc6816, type: 3}
