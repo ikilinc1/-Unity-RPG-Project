@@ -119,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4370837261869359462}
-  m_LocalRotation: {x: 0.33100694, y: 0.000000022961773, z: -0.000000008054555, w: 0.9436283}
+  m_LocalRotation: {x: 0.33100694, y: -0.000000022961778, z: 0.000000008054557, w: 0.9436283}
   m_LocalPosition: {x: -4.969818, y: 5.9183097, z: -18.589508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -333,6 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 4370837261869359463}
+  moveLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!4 &6942691047440457638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5541444101491777149, guid: fb0e13ff79a52a0439c985e2eb85281d, type: 3}

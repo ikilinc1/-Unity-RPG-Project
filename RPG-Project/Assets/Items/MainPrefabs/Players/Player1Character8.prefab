@@ -311,6 +311,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 7973659554866425199}
+  moveLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!195 &7198114485885844605
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -20,7 +20,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 pos;
     private Vector3 currPos;
 
-    public static bool canMove = true; 
+    public static bool canMove = true;
+    public LayerMask moveLayer;
     
     // Start is called before the first frame update
     void Start()
@@ -51,7 +52,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if (Camera.main != null) ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit,300,moveLayer))
                 {
                     nav.destination = hit.point;
                 }
