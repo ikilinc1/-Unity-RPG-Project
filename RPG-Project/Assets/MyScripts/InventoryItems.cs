@@ -21,7 +21,7 @@ public class InventoryItems : MonoBehaviour
     public static int redFlowers = 0;
     public static int roots = 0;
     public static int leafDews = 0;
-    public static int key = 0;
+    public static bool key = true;
     public static int pinkEggs = 0;
     public static int bluePotions = 0;
     public static int purplePotions = 0;
@@ -32,6 +32,7 @@ public class InventoryItems : MonoBehaviour
     public static int meat = 0;
     
     public static int newIcon = 0;
+    public static int gold = 0;
     public static bool iconUpdate = false;
     private int max;
     // Start is called before the first frame update
@@ -49,7 +50,6 @@ public class InventoryItems : MonoBehaviour
         redFlowers = 0;
         roots = 0;
         leafDews = 0;
-        key = 0;
         pinkEggs = 0;
         bluePotions = 0;
         purplePotions = 0;

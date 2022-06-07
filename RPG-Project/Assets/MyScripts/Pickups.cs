@@ -11,6 +11,7 @@ public class Pickups : MonoBehaviour
     public bool brownMushroom = false;
     public bool blueFlower = false;
     public bool redFlower = false;
+    
 
     private void OnTriggerEnter(Collider other)
     {
