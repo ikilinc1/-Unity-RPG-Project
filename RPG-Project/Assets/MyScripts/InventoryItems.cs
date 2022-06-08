@@ -32,7 +32,7 @@ public class InventoryItems : MonoBehaviour
     public static int meat = 0;
     
     public static int newIcon = 0;
-    public static int gold = 0;
+    public static int gold = 300;
     public static bool iconUpdate = false;
     private int max;
     // Start is called before the first frame update
