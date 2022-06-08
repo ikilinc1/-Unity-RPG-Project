@@ -42,6 +42,7 @@ Used Assets (Outside of Unity)
 - https://sketchfab.com/3d-models/stylized-character-pedestal-agustin-honnun-6e40b7b727034ee7a2949dcbadddc919
 - https://sketchfab.com/3d-models/stylized-fences-set-agustin-honnun-de8a95edea634ff5bed2c2c6c7c5d1ae
 - https://www.cgtrader.com/free-3d-models/character/fantasy/lowpoly-hand-painted-wizard
+- https://www.mixamo.com
 
 Icons used:  
 - https://opengameart.org/content/free-rpg-icons-2
