@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Text shopOwnerMessage;
     public Color32 messageOff;
     public Color32 messageOn;
+
+    public GameObject shopUI;
     
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -29,11 +32,26 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         shopOwnerMessage.text = "Hello " + SaveScript.pname + ", How can i help you?";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Message1()
     {
-        
+        shopOwnerMessage.text = "Not much going on around here at this time around.";
+    }
+    
+    public void Message2()
+    {
+        shopOwnerMessage.text = "Sure, as long as you have some coins.";
+        shopUI.SetActive(true);
     }
 
-    
+    private void Update()
+    {
+        if (PlayerMove.canMove && PlayerMove.moving)
+        {
+            if (shopUI)
+            {
+                shopUI.SetActive(false);
+            }
+        }
+        
+    }
 }
