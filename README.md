@@ -37,10 +37,11 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/2d/textures-materials/stone/hand-painted-stone-textures-28645
 - https://assetstore.unity.com/packages/2d/textures-materials/basic-rpg-cursors-139404
 
-Used Assets (SketchFab)  
+Used Assets (Outside of Unity)  
 - https://sketchfab.com/3d-models/stylized-rock-agustin-honnun-ae21c3d47cb14323a3bb06ccb562e368
 - https://sketchfab.com/3d-models/stylized-character-pedestal-agustin-honnun-6e40b7b727034ee7a2949dcbadddc919
 - https://sketchfab.com/3d-models/stylized-fences-set-agustin-honnun-de8a95edea634ff5bed2c2c6c7c5d1ae
+- https://www.cgtrader.com/free-3d-models/character/fantasy/lowpoly-hand-painted-wizard
 
 Icons used:  
 - https://opengameart.org/content/free-rpg-icons-2
