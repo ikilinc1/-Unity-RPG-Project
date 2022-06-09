@@ -9,6 +9,7 @@ public class InventoryItems : MonoBehaviour
     public GameObject inventoryMenu;
     public GameObject openBook;
     public GameObject closedBook;
+    public GameObject messageBox;
 
     public Image[] emptySlots;
     public Sprite[] icons;
@@ -81,6 +82,7 @@ public class InventoryItems : MonoBehaviour
 
     public void openMenu()
     {
+        messageBox.SetActive(false);
         inventoryMenu.SetActive(true);
         openBook.SetActive(true);
         closedBook.SetActive(false);

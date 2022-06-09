@@ -17,6 +17,7 @@ public class BuyScript : MonoBehaviour
     
     private Text compare;
     private int max = 0;
+    private bool canClick = true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,36 +33,45 @@ public class BuyScript : MonoBehaviour
 
     public void BuyButton()
     {
-        for (int i = 0; i < max; i++)
+        if (canClick)
         {
-            if (itemAmountText[i] == compare)
+            for (int i = 0; i < max; i++)
             {
-                max = i;
-                if (amount[i] > 0)
+                if (itemAmountText[i] == compare)
                 {
-                    if (tavern)
+                    max = i;
+                    if (amount[i] > 0)
                     {
-                        UpdateTavernAmount();
-                    }
-
-                    if (InventoryItems.gold >= cost[i])
-                    {
-                        if (inventoryItems[i] == 0)
-                        {
-                            InventoryItems.newIcon = iconNum[i];
-                            InventoryItems.iconUpdate = true;
-                        }
-                        InventoryItems.gold -= cost[i];
                         if (tavern)
                         {
-                            setTavernAmount(i);
+                            UpdateTavernAmount();
+                        }
+
+                        if (InventoryItems.gold >= cost[i])
+                        {
+                            if (inventoryItems[i] == 0)
+                            {
+                                InventoryItems.newIcon = iconNum[i];
+                                InventoryItems.iconUpdate = true;
+                            }
+                            InventoryItems.gold -= cost[i];
+                            if (tavern)
+                            {
+                                SetTavernAmount(i);
+                            }
                         }
                     }
                 }
             }
         }
+        
     }
 
+    public void UpdateGold()
+    {
+        currencyText.text = InventoryItems.gold.ToString();
+    }
+    
     void UpdateTavernAmount()
     {
         inventoryItems[0] = InventoryItems.breads;
@@ -69,7 +79,7 @@ public class BuyScript : MonoBehaviour
         inventoryItems[2] = InventoryItems.meat;
     }
     
-    void setTavernAmount(int item)
+    void SetTavernAmount(int item)
     {
         if (item == 0)
         {
@@ -88,5 +98,33 @@ public class BuyScript : MonoBehaviour
         itemAmountText[item].text = amount[item].ToString();
         currencyText.text = InventoryItems.gold.ToString();
         max = itemAmountText.Length;
+    }
+
+    public void Bread()
+    {
+        compare = itemAmountText[0];
+        Check(0);
+    }
+    public void Cheese()
+    {
+        compare = itemAmountText[1];
+        Check(1);
+    }
+    public void Meat()
+    {
+        compare = itemAmountText[2];
+        Check(2);
+    }
+
+    void Check(int b)
+    {
+        if (amount[b] > 0)
+        {
+            canClick = true;
+        }
+        else
+        {
+            canClick = false;
+        }
     }
 }
