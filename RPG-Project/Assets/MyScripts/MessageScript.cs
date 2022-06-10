@@ -12,7 +12,10 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Color32 messageOff;
     public Color32 messageOn;
 
-    public GameObject shopUI;
+    public GameObject[] shopUI;
+    
+    [HideInInspector]
+    public int shopNumber = 0;
     
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -40,17 +43,17 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void Message2()
     {
         shopOwnerMessage.text = "Sure, as long as you have some coins.";
-        shopUI.SetActive(true);
-        shopUI.GetComponent<BuyScript>().UpdateGold();
+        shopUI[shopNumber].SetActive(true);
+        shopUI[shopNumber].GetComponent<BuyScript>().UpdateGold();
     }
 
     private void Update()
     {
         if (PlayerMove.canMove && PlayerMove.moving)
         {
-            if (shopUI)
+            if (shopUI[shopNumber])
             {
-                shopUI.SetActive(false);
+                shopUI[shopNumber].SetActive(false);
             }
         }
         

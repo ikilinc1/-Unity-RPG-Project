@@ -5,8 +5,9 @@ using UnityEngine;
 public class TalkScript : MonoBehaviour
 {
     public GameObject messageBox;
+    public int tavernNumber = 0;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -19,6 +20,14 @@ public class TalkScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             messageBox.SetActive(false);
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            messageBox.GetComponentInChildren<MessageScript>().shopNumber = tavernNumber;
         }
     }
 }
