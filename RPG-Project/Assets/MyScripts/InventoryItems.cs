@@ -11,6 +11,8 @@ public class InventoryItems : MonoBehaviour
     public GameObject closedBook;
     public GameObject messageBox;
 
+    public GameObject potionBook;
+
     public Image[] emptySlots;
     public Sprite[] icons;
     public Sprite emptyIcon;
@@ -42,6 +44,7 @@ public class InventoryItems : MonoBehaviour
         inventoryMenu.SetActive(false);
         openBook.SetActive(false);
         closedBook.SetActive(true);
+        potionBook.SetActive(false);
         max = emptySlots.Length; 
         //TEMP
         redMushrooms = 0; 
@@ -80,7 +83,7 @@ public class InventoryItems : MonoBehaviour
         }
     }
 
-    public void openMenu()
+    public void OpenMenu()
     {
         messageBox.SetActive(false);
         inventoryMenu.SetActive(true);
@@ -89,7 +92,7 @@ public class InventoryItems : MonoBehaviour
         Time.timeScale = 0;
     }
     
-    public void closeMenu()
+    public void CloseMenu()
     {
         inventoryMenu.SetActive(false);
         openBook.SetActive(false);
@@ -97,6 +100,16 @@ public class InventoryItems : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void OpenPotionBook()
+    {
+        potionBook.SetActive(true);
+    }
+    
+    public void ClosePotionBook()
+    {
+        potionBook.SetActive(false);
+    }
+    
     IEnumerator Reset()
     {
         yield return new WaitForSeconds(0.1f);
