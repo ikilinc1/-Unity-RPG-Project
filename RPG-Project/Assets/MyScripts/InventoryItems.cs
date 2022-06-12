@@ -10,8 +10,8 @@ public class InventoryItems : MonoBehaviour
     public GameObject openBook;
     public GameObject closedBook;
     public GameObject messageBox;
-
     public GameObject potionBook;
+    public GameObject theCanvas;
 
     public Image[] emptySlots;
     public Sprite[] icons;
@@ -35,7 +35,7 @@ public class InventoryItems : MonoBehaviour
     public static int meat = 0;
     
     public static int newIcon = 0;
-    public static int gold = 300;
+    public static int gold = 30000;
     public static bool iconUpdate = false;
     private int max;
     // Start is called before the first frame update
@@ -107,6 +107,8 @@ public class InventoryItems : MonoBehaviour
     
     public void ClosePotionBook()
     {
+        theCanvas.GetComponent<CreatePotion>().thisValue = 0;
+        theCanvas.GetComponent<CreatePotion>().value = 0;
         potionBook.SetActive(false);
     }
     
