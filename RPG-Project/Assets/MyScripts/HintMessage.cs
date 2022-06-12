@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameObject hintBox;
     public Text message;
@@ -13,6 +13,11 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     public int objectType = 0;
 
     private Vector3 screenPoint;
+    public GameObject theCanvas;
+    
+    public Sprite cursorBasic;
+    public Sprite cursorHand;
+    public Image cursorImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +46,7 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         overIcon = true;
         if (displaying)
         {
+            cursorImage.sprite = cursorHand;
             hintBox.SetActive(true);
             screenPoint.x = Input.mousePosition.x + 320;
             screenPoint.y = Input.mousePosition.y + 150;
@@ -53,6 +59,7 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        cursorImage.sprite = cursorBasic;
         overIcon = false;
         hintBox.SetActive(false);
     }
@@ -128,5 +135,11 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         {
             message.text = InventoryItems.meat.ToString() + " kg meat to eat";
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        theCanvas.GetComponent<CreatePotion>().thisValue = objectType;
+        theCanvas.GetComponent<CreatePotion>().UpdateValues();
     }
 }
