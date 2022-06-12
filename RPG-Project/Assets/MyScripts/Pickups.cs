@@ -62,6 +62,7 @@ public class Pickups : MonoBehaviour
                 InventoryItems.redFlowers++;
                 Destroy(gameObject);
             }
+            
             else
             {
                 DisplayIcons();

@@ -104,7 +104,6 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         }
         if (objectType == 9)
         {
-            // meh change maybe
             message.text = InventoryItems.pinkEggs.ToString() + " pink eggs";
         }
         if (objectType == 10)
@@ -134,6 +133,31 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         if (objectType == 16)
         {
             message.text = InventoryItems.meat.ToString() + " kg meat to eat";
+        }
+        //////// potions start here
+        if (objectType == 20)
+        {
+            message.text = "Explosive fire attack";
+        }
+        if (objectType == 21)
+        {
+            message.text = "Replenishes full health";
+        }
+        if (objectType == 22)
+        {
+            message.text = "Become invisible for as long as mana lasts";
+        }
+        if (objectType == 23)
+        {
+            message.text = "Become invulnerable for as long as mana lasts";
+        }
+        if (objectType == 24)
+        {
+            message.text = "Double strength for as long as mana lasts";
+        }
+        if (objectType == 25)
+        {
+            message.text = "Swirl attack!";
         }
     }
 

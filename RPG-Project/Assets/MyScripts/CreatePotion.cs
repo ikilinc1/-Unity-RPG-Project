@@ -40,6 +40,7 @@ public class CreatePotion : MonoBehaviour
                 {
                     max = i;
                     emptySlots[i].sprite = icons[itemId];
+                    emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = itemId + 20;
                     value = 0;
                     thisValue = 0;
                 }
