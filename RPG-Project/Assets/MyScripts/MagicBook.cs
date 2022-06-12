@@ -17,6 +17,8 @@ public class MagicBook : MonoBehaviour
 
     private int currentIcon = 0;
     
+    public GameObject theCanvas;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,9 @@ public class MagicBook : MonoBehaviour
             magicDescription.text = descriptions[currentIcon];
             SwitchOff();
             iconSets[currentIcon].SetActive(true);
+            theCanvas.GetComponent<CreatePotion>().itemId++;
+            theCanvas.GetComponent<CreatePotion>().value = 0;
+            theCanvas.GetComponent<CreatePotion>().thisValue = 0;
         }
     }
     
@@ -49,6 +54,9 @@ public class MagicBook : MonoBehaviour
             magicDescription.text = descriptions[currentIcon];
             SwitchOff();
             iconSets[currentIcon].SetActive(true);
+            theCanvas.GetComponent<CreatePotion>().itemId--;
+            theCanvas.GetComponent<CreatePotion>().value = 0;
+            theCanvas.GetComponent<CreatePotion>().thisValue = 0;
         }
     }
 

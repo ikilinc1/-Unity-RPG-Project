@@ -21,6 +21,7 @@ public class CreatePotion : MonoBehaviour
     [HideInInspector]
     public int thisValue;
     private int max;
+    
     // Start is called before the first frame update
     void Start()
     {
