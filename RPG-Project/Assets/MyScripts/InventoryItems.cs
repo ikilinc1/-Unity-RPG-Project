@@ -38,6 +38,14 @@ public class InventoryItems : MonoBehaviour
     public static int gold = 30000;
     public static bool iconUpdate = false;
     private int max;
+
+    public string entry;
+    public string[] items;
+    public int currentId = 0;
+    public int checkAmount = 0;
+    private int maxTwo;
+    private int maxThree;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +53,9 @@ public class InventoryItems : MonoBehaviour
         openBook.SetActive(false);
         closedBook.SetActive(true);
         potionBook.SetActive(false);
-        max = emptySlots.Length; 
+        max = emptySlots.Length;
+        maxTwo = items.Length;
+        maxThree = emptySlots.Length;
         //TEMP
         redMushrooms = 0; 
         purpleMushrooms = 0; 
@@ -81,6 +91,39 @@ public class InventoryItems : MonoBehaviour
 
             StartCoroutine(Reset());
         }
+    }
+
+    public void CheckStatics()
+    {
+        for (int i = 0; i < maxTwo; i++)
+        {
+            if (i == currentId)
+            {
+                maxTwo = i;
+                checkAmount = System.Convert.ToInt32(typeof(InventoryItems).GetField(entry).GetValue(null));
+                checkAmount--;
+                typeof(InventoryItems).GetField(entry).SetValue(null, checkAmount);
+                if (checkAmount == 0)
+                {
+                    RemoveIcon(i);
+                }
+            }
+        }
+        maxTwo = items.Length;
+    }
+
+    public void RemoveIcon(int iconType)
+    {
+        for (int i = 0; i < maxThree; i++)
+        {
+            if (emptySlots[i].sprite == icons[iconType])
+            {
+                maxThree = i;
+                emptySlots[i].sprite = icons[0];
+                emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = 0;
+            }
+        }
+        maxThree = emptySlots.Length;
     }
 
     public void OpenMenu()
