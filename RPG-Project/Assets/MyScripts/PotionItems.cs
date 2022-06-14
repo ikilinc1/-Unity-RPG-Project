@@ -14,6 +14,10 @@ public class PotionItems : MonoBehaviour
     public Color32 startColor = new Color32(255,255,255,120);
     [HideInInspector]
     public Color32 endColor = new Color32(255,255,255,255);
+
+    public GameObject inventory;
+    private bool check = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +29,17 @@ public class PotionItems : MonoBehaviour
     {
         if (theCanvas.GetComponent<CreatePotion>().thisValue == objID)
         {
-            // maybe lerp color here later 
             thisImage.color = endColor;
+            if (check)
+            {
+                check = false;
+                inventory.GetComponent<InventoryItems>().currentId = objID;
+                inventory.GetComponent<InventoryItems>().CheckStatics();
+            }
         }
         if (theCanvas.GetComponent<CreatePotion>().thisValue == 0)
         {
+            check = true;
             thisImage.color = startColor;
         }
     }

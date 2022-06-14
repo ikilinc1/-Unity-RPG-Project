@@ -39,9 +39,12 @@ public class InventoryItems : MonoBehaviour
     public static bool iconUpdate = false;
     private int max;
 
+    [HideInInspector]
     public string entry;
     public string[] items;
+    [HideInInspector]
     public int currentId = 0;
+    [HideInInspector]
     public int checkAmount = 0;
     private int maxTwo;
     private int maxThree;
@@ -100,6 +103,7 @@ public class InventoryItems : MonoBehaviour
             if (i == currentId)
             {
                 maxTwo = i;
+                entry = items[i];
                 checkAmount = System.Convert.ToInt32(typeof(InventoryItems).GetField(entry).GetValue(null));
                 checkAmount--;
                 typeof(InventoryItems).GetField(entry).SetValue(null, checkAmount);
