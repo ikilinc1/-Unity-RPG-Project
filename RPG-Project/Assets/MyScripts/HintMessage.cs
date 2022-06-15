@@ -22,6 +22,8 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     public GameObject inventoryObject;
     public bool magic = false;
     public bool spells = false;
+
+    public bool left = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +70,15 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         {
             cursorImage.sprite = cursorHand;
             hintBox.SetActive(true);
-            screenPoint.x = Input.mousePosition.x + 320;
+            if (left)
+            {
+                screenPoint.x = Input.mousePosition.x + 320;
+            }
+
+            if (!left)
+            {
+                screenPoint.x = Input.mousePosition.x - 320;
+            }
             screenPoint.y = Input.mousePosition.y + 150;
             screenPoint.z = 1f;
             hintBox.transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
