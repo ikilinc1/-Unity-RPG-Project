@@ -48,6 +48,13 @@ public class InventoryItems : MonoBehaviour
     public int checkAmount = 0;
     private int maxTwo;
     private int maxThree;
+
+    public Image[] UISlots;
+    public Sprite[] magicIcons;
+    public KeyCode[] keys;
+    private bool set = false;
+    [HideInInspector] public int selected = 0;
+    public int[] magicAttack;
     
     // Start is called before the first frame update
     void Start()
@@ -93,6 +100,24 @@ public class InventoryItems : MonoBehaviour
             }
 
             StartCoroutine(Reset());
+        }
+
+        if (Input.anyKey)
+        {
+            set = true;
+        }
+
+        if (set)
+        {
+            set = false;
+            for (int i = 0; i < UISlots.Length; i++)
+            {
+                if (Input.GetKeyDown(keys[i]))
+                {
+                    UISlots[i].sprite = magicIcons[selected];
+                    magicAttack[i] = selected;
+                }
+            }
         }
     }
 

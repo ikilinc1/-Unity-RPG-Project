@@ -18,6 +18,9 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     public Sprite cursorBasic;
     public Sprite cursorHand;
     public Image cursorImage;
+
+    public GameObject inventoryObject;
+    public bool magic = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,10 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
             {
                 displaying = false;
                 hintBox.SetActive(false);
+                if (magic)
+                {
+                    inventoryObject.GetComponent<InventoryItems>().selected = objectType - 20;
+                }
             }
         }
         if (Input.GetMouseButtonUp(0))
