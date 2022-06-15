@@ -21,12 +21,15 @@ public class CreatePotion : MonoBehaviour
     [HideInInspector]
     public int thisValue;
     private int max;
+
+    private int maxTwo;
     
     // Start is called before the first frame update
     void Start()
     {
         expectedValue = values[0];
         max = emptySlots.Length;
+        maxTwo = emptySlots.Length;
         Create(); // added because of a bug
     }
 
@@ -47,6 +50,21 @@ public class CreatePotion : MonoBehaviour
             }
             max = emptySlots.Length;
         }
+    }
+
+    public void Remove(int index)
+    {
+        for (int i = 0; i < maxTwo; i++)
+        {
+            if (emptySlots[i].sprite == icons[index])
+            {
+                maxTwo = i;
+                emptySlots[i].sprite = emptyIcon;
+                emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = 0;
+            }
+        }
+
+        maxTwo = emptySlots.Length;
     }
 
     public void UpdateValues()

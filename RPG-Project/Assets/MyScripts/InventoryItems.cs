@@ -116,6 +116,7 @@ public class InventoryItems : MonoBehaviour
                 {
                     UISlots[i].sprite = magicIcons[selected];
                     magicAttack[i] = selected;
+                    theCanvas.GetComponent<CreatePotion>().Remove(selected);
                 }
             }
         }
