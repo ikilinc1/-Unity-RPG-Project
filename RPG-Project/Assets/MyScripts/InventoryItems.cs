@@ -51,8 +51,10 @@ public class InventoryItems : MonoBehaviour
 
     public Image[] UISlots;
     public Sprite[] magicIcons;
+    public Sprite[] spellIcons;
     public KeyCode[] keys;
     public bool set = false;
+    public bool setTwo = false;
     [HideInInspector] public int selected = 0;
     public int[] magicAttack;
     
@@ -112,6 +114,18 @@ public class InventoryItems : MonoBehaviour
                     UISlots[i].sprite = magicIcons[selected];
                     magicAttack[i] = selected;
                     theCanvas.GetComponent<CreatePotion>().Remove(selected);
+                }
+            }
+        }
+        if (setTwo)
+        {
+            for (int i = 0; i < UISlots.Length; i++)
+            {
+                if (Input.GetKeyDown(keys[i]))
+                {
+                    setTwo = false;
+                    UISlots[i].sprite = spellIcons[selected];
+                    magicAttack[i] = selected += 6;
                 }
             }
         }

@@ -21,6 +21,7 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
 
     public GameObject inventoryObject;
     public bool magic = false;
+    public bool spells = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +39,19 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
                 hintBox.SetActive(false);
                 if (magic)
                 {
-                    inventoryObject.GetComponent<InventoryItems>().selected = objectType - 20;
-                    inventoryObject.GetComponent<InventoryItems>().set = true;
+                    if (objectType != 0)
+                    {
+                        inventoryObject.GetComponent<InventoryItems>().selected = objectType - 20;
+                        inventoryObject.GetComponent<InventoryItems>().set = true;
+                    }
+                }
+                if (spells)
+                {
+                    if (objectType != 0)
+                    {
+                        inventoryObject.GetComponent<InventoryItems>().selected = objectType - 30;
+                        inventoryObject.GetComponent<InventoryItems>().setTwo = true;
+                    }
                 }
             }
         }
@@ -166,6 +178,32 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         if (objectType == 25)
         {
             message.text = "Swirl attack!";
+        }
+        
+        //////// magic attacks start here
+        if (objectType == 30)
+        {
+            message.text = "magic attack 1";
+        }
+        if (objectType == 31)
+        {
+            message.text = "magic attack 2";
+        }
+        if (objectType == 32)
+        {
+            message.text = "magic attack 3";
+        }
+        if (objectType == 33)
+        {
+            message.text = "magic attack 4";
+        }
+        if (objectType == 34)
+        {
+            message.text = "magic attack 5";
+        }
+        if (objectType == 35)
+        {
+            message.text = "magic attack 6";
         }
     }
 
