@@ -39,6 +39,7 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
                 if (magic)
                 {
                     inventoryObject.GetComponent<InventoryItems>().selected = objectType - 20;
+                    inventoryObject.GetComponent<InventoryItems>().set = true;
                 }
             }
         }

@@ -52,7 +52,7 @@ public class InventoryItems : MonoBehaviour
     public Image[] UISlots;
     public Sprite[] magicIcons;
     public KeyCode[] keys;
-    private bool set = false;
+    public bool set = false;
     [HideInInspector] public int selected = 0;
     public int[] magicAttack;
     
@@ -101,19 +101,14 @@ public class InventoryItems : MonoBehaviour
 
             StartCoroutine(Reset());
         }
-
-        if (Input.anyKey)
-        {
-            set = true;
-        }
-
+        
         if (set)
         {
-            set = false;
             for (int i = 0; i < UISlots.Length; i++)
             {
                 if (Input.GetKeyDown(keys[i]))
                 {
+                    set = false;
                     UISlots[i].sprite = magicIcons[selected];
                     magicAttack[i] = selected;
                     theCanvas.GetComponent<CreatePotion>().Remove(selected);
