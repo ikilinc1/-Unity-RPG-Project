@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CreatePotion : MonoBehaviour
 {
+    public GameObject inventoryObject;
+    private AudioSource audioPlayer;
+    
     public int[] values;
     [HideInInspector]
     public int expectedValue;
@@ -30,6 +33,7 @@ public class CreatePotion : MonoBehaviour
         expectedValue = values[0];
         max = emptySlots.Length;
         maxTwo = emptySlots.Length;
+        audioPlayer = inventoryObject.GetComponent<AudioSource>();
         Create(); // added because of a bug
     }
 
@@ -44,6 +48,8 @@ public class CreatePotion : MonoBehaviour
                     max = i;
                     emptySlots[i].sprite = icons[itemId];
                     emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = itemId + 20;
+                    audioPlayer.clip = inventoryObject.GetComponent<InventoryItems>().createPotionSound;
+                    audioPlayer.Play();
                     value = 0;
                     thisValue = 0;
                 }

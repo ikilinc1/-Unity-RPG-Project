@@ -5,18 +5,28 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
+    private GameObject inventoryObject;
+    private AudioSource audioPlayer;
+    
     public int number;
     public bool redMushroom = false;
     public bool purpleMushroom = false;
     public bool brownMushroom = false;
     public bool blueFlower = false;
     public bool redFlower = false;
-    
+
+    private void Start()
+    {
+        inventoryObject = GameObject.Find("InventoryCanvas");
+        audioPlayer = inventoryObject.GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            audioPlayer.clip = inventoryObject.GetComponent<InventoryItems>().pickupSound;
+            audioPlayer.Play();
             if (redMushroom)
             {
                 if (InventoryItems.redMushrooms == 0)
