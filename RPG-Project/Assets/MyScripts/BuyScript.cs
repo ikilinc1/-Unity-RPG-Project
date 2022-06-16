@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class BuyScript : MonoBehaviour
 {
+    public GameObject inventoryObject;
+    private AudioSource audioPlayer;
+    
     public GameObject shopUI;
     public Text currencyText;
     public bool tavern = false;
@@ -24,6 +27,7 @@ public class BuyScript : MonoBehaviour
     {
         max = itemAmountText.Length;
         currencyText.text = InventoryItems.gold.ToString();
+        audioPlayer = inventoryObject.GetComponent<AudioSource>();
     }
     
     public void CloseShop()
@@ -58,6 +62,8 @@ public class BuyScript : MonoBehaviour
                                 InventoryItems.iconUpdate = true;
                             }
                             InventoryItems.gold -= cost[i];
+                            audioPlayer.clip = inventoryObject.GetComponent<InventoryItems>().buySound;
+                            audioPlayer.Play();
                             if (tavern)
                             {
                                 SetTavernAmount(i);

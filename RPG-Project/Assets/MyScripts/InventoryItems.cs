@@ -16,6 +16,7 @@ public class InventoryItems : MonoBehaviour
     private AudioSource audioPlayer;
     public AudioClip bookOpenSound;
     public AudioClip selectSound;
+    public AudioClip buySound;
 
     public Image[] emptySlots;
     public Sprite[] icons;
