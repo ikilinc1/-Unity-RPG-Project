@@ -7,6 +7,9 @@ public class RoofScript : MonoBehaviour
 {
     public GameObject roof;
     public GameObject props;
+    public GameObject myCamera;
+    public bool tavern = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,11 @@ public class RoofScript : MonoBehaviour
         {
             roof.SetActive(false);
             props.SetActive(true);
+            if (tavern)
+            {
+                myCamera.GetComponent<AudioManager>().musicState = 2;
+                myCamera.GetComponent<AudioManager>().canPlay = true;
+            }
         }
     }
     
@@ -29,6 +37,11 @@ public class RoofScript : MonoBehaviour
         {
             roof.SetActive(true);
             props.SetActive(false);
+            if (tavern)
+            {
+                myCamera.GetComponent<AudioManager>().musicState = 1;
+                myCamera.GetComponent<AudioManager>().canPlay = true;
+            }
         }
     }
     
