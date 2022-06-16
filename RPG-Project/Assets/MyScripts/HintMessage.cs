@@ -24,10 +24,14 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
     public bool spells = false;
 
     public bool left = true;
+
+    private AudioSource audioPlayer;
+    
     // Start is called before the first frame update
     void Start()
     {
         hintBox.SetActive(false);
+        audioPlayer = inventoryObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,8 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         {
             if (Input.GetMouseButtonDown(0))
             {
+                audioPlayer.clip = inventoryObject.GetComponent<InventoryItems>().selectSound;
+                audioPlayer.Play();
                 displaying = false;
                 hintBox.SetActive(false);
                 if (magic)

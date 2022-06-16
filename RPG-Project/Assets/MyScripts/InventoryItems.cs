@@ -13,6 +13,10 @@ public class InventoryItems : MonoBehaviour
     public GameObject potionBook;
     public GameObject theCanvas;
 
+    private AudioSource audioPlayer;
+    public AudioClip bookOpenSound;
+    public AudioClip selectSound;
+
     public Image[] emptySlots;
     public Sprite[] icons;
     public Sprite emptyIcon;
@@ -68,6 +72,7 @@ public class InventoryItems : MonoBehaviour
         max = emptySlots.Length;
         maxTwo = items.Length;
         maxThree = emptySlots.Length;
+        audioPlayer = GetComponent<AudioSource>();
         //TEMP
         redMushrooms = 0; 
         purpleMushrooms = 0; 
@@ -171,6 +176,8 @@ public class InventoryItems : MonoBehaviour
         inventoryMenu.SetActive(true);
         openBook.SetActive(true);
         closedBook.SetActive(false);
+        audioPlayer.clip = bookOpenSound;
+        audioPlayer.Play();
         Time.timeScale = 0;
     }
     
@@ -179,6 +186,8 @@ public class InventoryItems : MonoBehaviour
         inventoryMenu.SetActive(false);
         openBook.SetActive(false);
         closedBook.SetActive(true);
+        audioPlayer.clip = bookOpenSound;
+        audioPlayer.Play();
         Time.timeScale = 1;
     }
 
