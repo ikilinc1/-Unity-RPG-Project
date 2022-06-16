@@ -36,6 +36,9 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
 - https://assetstore.unity.com/packages/2d/textures-materials/stone/hand-painted-stone-textures-28645
 - https://assetstore.unity.com/packages/2d/textures-materials/basic-rpg-cursors-139404
+- https://assetstore.unity.com/packages/audio/music/orchestral/fantasy-music-lite-72931
+- https://assetstore.unity.com/packages/audio/sound-fx/fantasy-sfx-32833
+- https://assetstore.unity.com/packages/audio/sound-fx/monster-sfx-111518-132868
 
 Used Assets (Outside of Unity)  
 - https://sketchfab.com/3d-models/stylized-rock-agustin-honnun-ae21c3d47cb14323a3bb06ccb562e368
