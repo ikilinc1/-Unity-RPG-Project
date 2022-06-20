@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,13 @@ public class ParticleMover : MonoBehaviour
     public float lifetime = 1.5f;
     public bool enemySeeker = false;
     public bool nonMoving = false;
-    
+    private GameObject targetSave;
+
+    private void Start()
+    {
+        targetSave = SaveScript.theTarget;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +27,14 @@ public class ParticleMover : MonoBehaviour
         }
         if (enemySeeker)
         {
-            transform.position = Vector3.LerpUnclamped(transform.position, SaveScript.theTarget.transform.position, speed * Time.deltaTime);
+            if (targetSave)
+            {
+                transform.position = Vector3.LerpUnclamped(transform.position, targetSave.transform.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            }
         }
         Destroy(obj, lifetime);
     }

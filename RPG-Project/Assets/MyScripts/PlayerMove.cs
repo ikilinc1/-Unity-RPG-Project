@@ -68,6 +68,10 @@ public class PlayerMove : MonoBehaviour
                     {
                         SaveScript.theTarget = hit.transform.gameObject;
                     }
+                    else
+                    {
+                        SaveScript.theTarget = null;
+                    }
                     nav.destination = hit.point;
                 }
             }
