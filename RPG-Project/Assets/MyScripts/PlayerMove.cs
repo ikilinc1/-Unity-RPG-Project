@@ -64,6 +64,10 @@ public class PlayerMove : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit,300,moveLayer))
                 {
+                    if (hit.transform.gameObject.CompareTag("enemy"))
+                    {
+                        SaveScript.theTarget = hit.transform.gameObject;
+                    }
                     nav.destination = hit.point;
                 }
             }
