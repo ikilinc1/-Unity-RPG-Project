@@ -64,6 +64,8 @@ public class InventoryItems : MonoBehaviour
     public bool setTwo = false;
     [HideInInspector] public int selected = 0;
     public int[] magicAttack;
+
+    public GameObject magicParticle;
     
     // Start is called before the first frame update
     void Start()
@@ -136,6 +138,13 @@ public class InventoryItems : MonoBehaviour
                     magicAttack[i] = selected += 6;
                 }
             }
+        }
+
+        //TMP for testing
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Instantiate(magicParticle, SaveScript.spawnPoint.transform.position,
+                SaveScript.spawnPoint.transform.rotation);
         }
     }
 

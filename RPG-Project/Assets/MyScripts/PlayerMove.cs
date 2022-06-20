@@ -27,6 +27,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject freeCam;
     public GameObject staticCam;
     private bool freeCamActive = true;
+
+    public GameObject spawnPoint;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         currPos = ct.m_FollowOffset;
         freeCam.SetActive(true);
         staticCam.SetActive(false);
+        SaveScript.spawnPoint = spawnPoint;
     }
 
     // Update is called once per frame
