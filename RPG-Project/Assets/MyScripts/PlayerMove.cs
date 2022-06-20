@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     private bool freeCamActive = true;
 
     public GameObject spawnPoint;
+    private WaitForSeconds approachEnemy = new WaitForSeconds(0.3f);
     
     // Start is called before the first frame update
     void Start()
@@ -67,12 +69,15 @@ public class PlayerMove : MonoBehaviour
                     if (hit.transform.gameObject.CompareTag("enemy"))
                     {
                         SaveScript.theTarget = hit.transform.gameObject;
+                        nav.destination = hit.point;
+                        StartCoroutine(MoveTo());
                     }
                     else
                     {
                         SaveScript.theTarget = null;
+                        nav.destination = hit.point;
+                        nav.isStopped = false;
                     }
-                    nav.destination = hit.point;
                 }
             }
         }
@@ -112,5 +117,11 @@ public class PlayerMove : MonoBehaviour
                 freeCamActive = true;
             }
         }
+    }
+
+    IEnumerator MoveTo()
+    {
+        yield return approachEnemy;
+        nav.isStopped = true;
     }
 }
