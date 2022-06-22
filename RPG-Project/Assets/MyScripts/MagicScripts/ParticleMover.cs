@@ -36,6 +36,17 @@ public class ParticleMover : MonoBehaviour
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
+        if (nonMoving)
+        {
+            if (targetSave)
+            {
+                transform.position = targetSave.transform.position;
+            }
+            else
+            {
+                Destroy(obj);
+            }
+        }
         Destroy(obj, lifetime);
     }
 }
