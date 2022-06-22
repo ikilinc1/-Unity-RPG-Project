@@ -68,6 +68,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     if (hit.transform.gameObject.CompareTag("enemy"))
                     {
+                        nav.isStopped = false;
                         SaveScript.theTarget = hit.transform.gameObject;
                         nav.destination = hit.point;
                         StartCoroutine(MoveTo());
