@@ -65,7 +65,7 @@ public class InventoryItems : MonoBehaviour
     [HideInInspector] public int selected = 0;
     public int[] magicAttack;
 
-    public GameObject magicParticle;
+    public GameObject[] magicParticles;
     
     // Start is called before the first frame update
     void Start()
@@ -140,11 +140,18 @@ public class InventoryItems : MonoBehaviour
             }
         }
 
-        //TMP for testing
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.anyKey && Time.timeScale == 1)
         {
-            Instantiate(magicParticle, SaveScript.spawnPoint.transform.position,
-                SaveScript.spawnPoint.transform.rotation);
+            for (int i = 0; i < UISlots.Length; i++)
+            {
+                if (Input.GetKeyDown(keys[i]))
+                {
+                    if (UISlots[i].sprite != emptyIcon)
+                    {
+                        Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
+                    }
+                }
+            }
         }
     }
 
