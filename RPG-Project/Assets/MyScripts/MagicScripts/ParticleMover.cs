@@ -11,11 +11,15 @@ public class ParticleMover : MonoBehaviour
     public float lifetime = 1.5f;
     public bool enemySeeker = false;
     public bool nonMoving = false;
+    public bool followPlayer = false;
     private GameObject targetSave;
+    private GameObject playerObj;
+    
 
     private void Start()
     {
         targetSave = SaveScript.theTarget;
+        playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -46,6 +50,11 @@ public class ParticleMover : MonoBehaviour
             {
                 Destroy(obj);
             }
+        }
+
+        if (followPlayer)
+        {
+            transform.position = playerObj.transform.position;
         }
         Destroy(obj, lifetime);
     }
