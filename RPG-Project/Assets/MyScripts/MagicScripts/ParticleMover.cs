@@ -14,6 +14,7 @@ public class ParticleMover : MonoBehaviour
     public bool followPlayer = false;
     
     public float manaCost = 0.05f;
+    public bool invisibility = false;
     
     private GameObject targetSave;
     private GameObject playerObj;
@@ -22,6 +23,10 @@ public class ParticleMover : MonoBehaviour
     {
         targetSave = SaveScript.theTarget;
         playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (invisibility)
+        {
+            SaveScript.invisible = true;
+        }
     }
 
     // Update is called once per frame

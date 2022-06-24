@@ -31,6 +31,8 @@ public class PlayerMove : MonoBehaviour
 
     public GameObject spawnPoint;
     private WaitForSeconds approachEnemy = new WaitForSeconds(0.3f);
+
+    public GameObject[] playerObjs;
     
     // Start is called before the first frame update
     void Start()
@@ -116,6 +118,28 @@ public class PlayerMove : MonoBehaviour
                 freeCam.SetActive(true);
                 staticCam.SetActive(false);
                 freeCamActive = true;
+            }
+        }
+
+        if (playerObjs[0].activeSelf)
+        {
+            if (SaveScript.invisible)
+            {
+                for (int i = 0; i < playerObjs.Length; i++)
+                {
+                    playerObjs[i].SetActive(false);
+                }
+            }
+        }
+        
+        if (!playerObjs[0].activeSelf)
+        {
+            if (!SaveScript.invisible)
+            {
+                for (int i = 0; i < playerObjs.Length; i++)
+                {
+                    playerObjs[i].SetActive(true);
+                }
             }
         }
     }

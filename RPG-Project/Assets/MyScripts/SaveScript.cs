@@ -10,6 +10,7 @@ public class SaveScript : MonoBehaviour
     public static GameObject spawnPoint;
     public static GameObject theTarget;
     public static float manaAmount = 1f;
+    public static bool invisible = false;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,12 @@ public class SaveScript : MonoBehaviour
         if (manaAmount <= 0)
         {
             manaAmount = 0;
+            invisible = false;
+        }
+
+        if (manaAmount < 0.03f)
+        {
+            invisible = false;
         }
     }
 }
