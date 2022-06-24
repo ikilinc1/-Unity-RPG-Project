@@ -153,6 +153,11 @@ public class InventoryItems : MonoBehaviour
                         {
                             Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
                         }
+
+                        if (magicAttack[i] < 6 && SaveScript.manaAmount > 0.1f)
+                        {
+                            UISlots[i].sprite = emptyIcon;
+                        }
                     }
                 }
             }

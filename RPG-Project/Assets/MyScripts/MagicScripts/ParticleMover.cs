@@ -57,6 +57,11 @@ public class ParticleMover : MonoBehaviour
         if (followPlayer)
         {
             transform.position = playerObj.transform.position;
+            lifetime = 100;
+            if (SaveScript.manaAmount <= 0.02f)
+            {
+                Destroy(obj);
+            }
         }
 
         SaveScript.manaAmount -= manaCost * Time.deltaTime;
