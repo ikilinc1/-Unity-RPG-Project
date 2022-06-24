@@ -64,6 +64,7 @@ public class InventoryItems : MonoBehaviour
     public bool setTwo = false;
     [HideInInspector] public int selected = 0;
     public int[] magicAttack;
+    public AudioClip[] magicSounds;
 
     public GameObject[] magicParticles;
     public Image manaBar;
@@ -152,6 +153,8 @@ public class InventoryItems : MonoBehaviour
                         if (SaveScript.manaAmount > 0.1f)
                         {
                             Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
+                            audioPlayer.clip = magicSounds[magicAttack[i]];
+                            audioPlayer.Play();
                         }
 
                         if (magicAttack[i] < 6 && SaveScript.manaAmount > 0.1f)
