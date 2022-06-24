@@ -21,7 +21,11 @@ public class SaveScript : MonoBehaviour
     {
         if (manaAmount < 1f)
         {
-            manaAmount += 0.03f * Time.deltaTime;
+            manaAmount += 0.04f * Time.deltaTime;
+        }
+        if (manaAmount <= 0)
+        {
+            manaAmount = 0;
         }
     }
 }

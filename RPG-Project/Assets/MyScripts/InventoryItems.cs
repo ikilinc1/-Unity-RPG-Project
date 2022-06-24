@@ -149,7 +149,10 @@ public class InventoryItems : MonoBehaviour
                 {
                     if (UISlots[i].sprite != emptyIcon)
                     {
-                        Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
+                        if (SaveScript.manaAmount > 0.1f)
+                        {
+                            Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
+                        }
                     }
                 }
             }
@@ -200,6 +203,7 @@ public class InventoryItems : MonoBehaviour
         closedBook.SetActive(false);
         audioPlayer.clip = bookOpenSound;
         audioPlayer.Play();
+        SaveScript.theTarget = null;
         Time.timeScale = 0;
     }
     
