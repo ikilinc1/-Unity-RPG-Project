@@ -9910,6 +9910,10 @@ MonoBehaviour:
   obj: {fileID: 1881051791716826182}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &1882164362543349239
 GameObject:
   m_ObjectHideFlags: 0
@@ -24532,6 +24536,10 @@ MonoBehaviour:
   obj: {fileID: 1881051791716826182}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &7228714699862523965
 GameObject:
   m_ObjectHideFlags: 0

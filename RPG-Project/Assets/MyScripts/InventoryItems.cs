@@ -66,6 +66,7 @@ public class InventoryItems : MonoBehaviour
     public int[] magicAttack;
 
     public GameObject[] magicParticles;
+    public Image manaBar;
     
     // Start is called before the first frame update
     void Start()
@@ -153,6 +154,8 @@ public class InventoryItems : MonoBehaviour
                 }
             }
         }
+
+        manaBar.fillAmount = SaveScript.manaAmount;
     }
 
     public void CheckStatics()

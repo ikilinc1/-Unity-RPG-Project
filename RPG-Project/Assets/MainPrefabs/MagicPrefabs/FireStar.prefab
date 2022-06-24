@@ -29112,6 +29112,10 @@ MonoBehaviour:
   obj: {fileID: 5411206231192343703}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &3842463829773480624
 GameObject:
   m_ObjectHideFlags: 0
@@ -34185,6 +34189,10 @@ MonoBehaviour:
   obj: {fileID: 5411206231192343703}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &3842463830226698693
 GameObject:
   m_ObjectHideFlags: 0
@@ -39060,6 +39068,10 @@ MonoBehaviour:
   obj: {fileID: 5411206231192343703}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &3842463830348811946
 GameObject:
   m_ObjectHideFlags: 0
@@ -48867,6 +48879,10 @@ MonoBehaviour:
   obj: {fileID: 5411206231192343703}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02
 --- !u!1 &3842463830815697132
 GameObject:
   m_ObjectHideFlags: 0
@@ -73248,3 +73264,7 @@ MonoBehaviour:
   obj: {fileID: 5411206231192343703}
   speed: 9
   lifetime: 4
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.02

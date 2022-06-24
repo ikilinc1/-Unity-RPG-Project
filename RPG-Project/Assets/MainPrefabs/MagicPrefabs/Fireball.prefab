@@ -53,6 +53,8 @@ MonoBehaviour:
   lifetime: 4
   enemySeeker: 1
   nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.01
 --- !u!1 &2782288980729532566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4941,8 @@ MonoBehaviour:
   lifetime: 4
   enemySeeker: 1
   nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.01
 --- !u!1 &2782288981127278384
 GameObject:
   m_ObjectHideFlags: 0
@@ -34031,6 +34035,8 @@ MonoBehaviour:
   lifetime: 4
   enemySeeker: 1
   nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.01
 --- !u!1 &6649344646313611834
 GameObject:
   m_ObjectHideFlags: 0

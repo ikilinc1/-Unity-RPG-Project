@@ -212,6 +212,8 @@ MonoBehaviour:
   lifetime: 8
   enemySeeker: 0
   nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.04
 --- !u!4 &2201481858572593608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428130, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}

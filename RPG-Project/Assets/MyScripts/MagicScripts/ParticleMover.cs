@@ -12,9 +12,11 @@ public class ParticleMover : MonoBehaviour
     public bool enemySeeker = false;
     public bool nonMoving = false;
     public bool followPlayer = false;
+    
+    public float manaCost = 0.05f;
+    
     private GameObject targetSave;
     private GameObject playerObj;
-    
 
     private void Start()
     {
@@ -56,6 +58,8 @@ public class ParticleMover : MonoBehaviour
         {
             transform.position = playerObj.transform.position;
         }
+
+        SaveScript.manaAmount -= manaCost * Time.deltaTime;
         Destroy(obj, lifetime);
     }
 }

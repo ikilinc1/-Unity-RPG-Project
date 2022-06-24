@@ -4762,6 +4762,7 @@ MonoBehaviour:
   enemySeeker: 0
   nonMoving: 0
   followPlayer: 1
+  manaCost: 0.09
 --- !u!1 &2610006768531525518
 GameObject:
   m_ObjectHideFlags: 0
