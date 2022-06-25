@@ -68,6 +68,12 @@ public class InventoryItems : MonoBehaviour
 
     public GameObject[] magicParticles;
     public Image manaBar;
+
+    private GameObject playerObj;
+    private Animator playerAnim;
+    private float weightAmount = 1.0f;
+    private bool changeWeight = false;
+    private AnimatorStateInfo playerInfo;
     
     // Start is called before the first frame update
     void Start()
@@ -80,6 +86,9 @@ public class InventoryItems : MonoBehaviour
         maxTwo = items.Length;
         maxThree = emptySlots.Length;
         audioPlayer = GetComponent<AudioSource>();
+        //playerObj = GameObject.FindGameObjectWithTag("Player");
+        //playerAnim = playerObj.GetComponent<Animator>();
+        StartCoroutine(FindPlayer());
         //TEMP
         redMushrooms = 0; 
         purpleMushrooms = 0; 
@@ -101,6 +110,12 @@ public class InventoryItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerAnim)
+        {
+            playerInfo = playerAnim.GetCurrentAnimatorStateInfo(1);
+        }
+        
+        
         if (iconUpdate)
         {
             for (int i = 0; i < max; i++)
@@ -155,6 +170,9 @@ public class InventoryItems : MonoBehaviour
                             Instantiate(magicParticles[magicAttack[i]], SaveScript.spawnPoint.transform.position, SaveScript.spawnPoint.transform.rotation);
                             audioPlayer.clip = magicSounds[magicAttack[i]];
                             audioPlayer.Play();
+                            playerAnim.SetTrigger("magicAttack");
+                            playerAnim.SetLayerWeight(1, 1);
+                            weightAmount = 1;
                         }
 
                         if (magicAttack[i] < 6 && SaveScript.manaAmount > 0.1f)
@@ -167,6 +185,21 @@ public class InventoryItems : MonoBehaviour
         }
 
         manaBar.fillAmount = SaveScript.manaAmount;
+
+        if (playerInfo.IsTag("magic"))
+        {
+            changeWeight = true;
+        }
+        
+        if (changeWeight == true)
+        {
+            weightAmount -= 0.4f * Time.deltaTime;
+            playerAnim.SetLayerWeight(1,weightAmount);
+            if (weightAmount <= 0)
+            {
+                changeWeight = false;
+            }
+        }
     }
 
     public void CheckStatics()
@@ -242,5 +275,17 @@ public class InventoryItems : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         iconUpdate = false;
         max = emptySlots.Length;
+    }
+    
+    IEnumerator FindPlayer()
+
+    {
+
+        yield return new WaitForSeconds(0.5f);
+
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+
+        playerAnim = playerObj.GetComponent<Animator>();
+
     }
 }
