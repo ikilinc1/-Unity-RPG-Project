@@ -30,6 +30,7 @@ public class BookCollect : MonoBehaviour
                 {
                     magicUI.SetActive(true);
                     magicCollected = true;
+                    Destroy(gameObject);
                 }
             }
             
@@ -39,6 +40,7 @@ public class BookCollect : MonoBehaviour
                 {
                     spellsUI.SetActive(true);
                     spellsCollected = true;
+                    Destroy(gameObject);
                 }
             }
         }
