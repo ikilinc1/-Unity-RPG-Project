@@ -16,8 +16,14 @@ public class BookCollect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spellsUI.SetActive(false);
-        magicUI.SetActive(false);
+        if (magicBook)
+        {
+            magicUI.SetActive(false);
+        }
+        if (spellsbook)
+        {
+            spellsUI.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

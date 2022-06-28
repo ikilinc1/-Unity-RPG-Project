@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 693596370483153646}
   m_Layer: 0
   m_Name: Player1Character3
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +58,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4679735748704129262}
-  m_LocalRotation: {x: 0.33100694, y: 0.000000016236429, z: -0.000000005695432, w: 0.9436283}
-  m_LocalPosition: {x: 0.57421875, y: 4.6570396, z: -16.894257}
+  m_LocalRotation: {x: 0.33100694, y: -0.000000016236429, z: 0.000000005695432, w: 0.9436283}
+  m_LocalPosition: {x: 0.57421875, y: 4.657039, z: -16.894257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -200,6 +200,37 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!1 &6636884530921116584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2598747105395285751}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2598747105395285751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636884530921116584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.207, z: 0.767}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 812528990895537927}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6854998736098028501
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181473530521177194}
   m_LocalRotation: {x: 0.33100694, y: -0.000000016236429, z: 0.000000005695432, w: 0.9436283}
-  m_LocalPosition: {x: 0.57421875, y: 4.6570396, z: -16.894257}
+  m_LocalPosition: {x: 0.57421875, y: 4.657039, z: -16.894257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -436,6 +467,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5762856737324807462, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
   m_PrefabInstance: {fileID: 4953793996028561953}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816205305863273677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5759214427769026284, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
+  m_PrefabInstance: {fileID: 4953793996028561953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &816217992482832845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5759154581326400492, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
@@ -488,6 +524,12 @@ MonoBehaviour:
     m_Bits: 1
   freeCam: {fileID: 4679735748704129262}
   staticCam: {fileID: 7181473530521177194}
+  spawnPoint: {fileID: 6636884530921116584}
+  playerObjs:
+  - {fileID: 816205305863273677}
+  - {fileID: 816404338556137825}
+  - {fileID: 6760246298229803176}
+  - {fileID: 8008130670774635851}
 --- !u!195 &8042215090918026619
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -510,3 +552,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1 &816404338556137825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5758725201307581248, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
+  m_PrefabInstance: {fileID: 4953793996028561953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6760246298229803176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1832491521746518665, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
+  m_PrefabInstance: {fileID: 4953793996028561953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8008130670774635851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3142933157772265322, guid: 1196dde80eda2ab4dbbfa29fe7de9e21, type: 3}
+  m_PrefabInstance: {fileID: 4953793996028561953}
+  m_PrefabAsset: {fileID: 0}
