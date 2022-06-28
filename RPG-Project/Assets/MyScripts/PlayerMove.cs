@@ -17,9 +17,10 @@ public class PlayerMove : MonoBehaviour
     private float velocitySpeed;
 
     private CinemachineTransposer ct;
-    public CinemachineVirtualCamera playerCam;
+    private CinemachineOrbitalTransposer cot;
     private Vector3 pos;
     private Vector3 currPos;
+    private string axisName = "Mouse X";
 
     public static bool canMove = true;
     public static bool moving = false;
@@ -39,7 +40,8 @@ public class PlayerMove : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        ct = playerCam.GetCinemachineComponent<CinemachineTransposer>();
+        ct = freeCam.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineTransposer>();
+        cot = staticCam.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineOrbitalTransposer>();
         currPos = ct.m_FollowOffset;
         freeCam.SetActive(true);
         staticCam.SetActive(false);
@@ -99,10 +101,17 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            cot.m_XAxis.m_InputAxisName = axisName;
             if (pos.x != 0 || pos.y != 0)
             {
                 currPos = pos / 50;
             }
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            cot.m_XAxis.m_InputAxisName = null;
+            cot.m_XAxis.m_InputAxisValue = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.C))

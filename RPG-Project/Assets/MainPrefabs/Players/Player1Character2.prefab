@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5417418447494114800}
   - component: {fileID: 96784021233861621}
   m_Layer: 0
-  m_Name: PlayerCam (1)
+  m_Name: FreeCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2690552609132383278}
-  m_LocalRotation: {x: 0.33100694, y: -0.000000016236426, z: 0.0000000056954317, w: 0.9436283}
+  m_LocalRotation: {x: 0.33100694, y: 0.00000001623643, z: -0.0000000056954326, w: 0.9436283}
   m_LocalPosition: {x: -2.1257324, y: 4.5228515, z: -16.999481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 3398834155235137627}
   - component: {fileID: 3398834155235137624}
   m_Layer: 0
-  m_Name: PlayerCam
+  m_Name: StaticCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,12 +535,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCam: {fileID: 3398834155235137624}
   moveLayer:
     serializedVersion: 2
     m_Bits: 1
-  freeCam: {fileID: 3398834155235137625}
-  staticCam: {fileID: 2690552609132383278}
+  freeCam: {fileID: 2690552609132383278}
+  staticCam: {fileID: 3398834155235137625}
   spawnPoint: {fileID: 6306871506536867922}
   playerObjs:
   - {fileID: 3847737572882236994}

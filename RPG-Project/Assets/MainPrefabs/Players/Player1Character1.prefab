@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5887921669556411412}
   - component: {fileID: 6040081587883659589}
   m_Layer: 0
-  m_Name: PlayerCam (1)
+  m_Name: FreeCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,8 +55,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3304709018530553346}
-  m_LocalRotation: {x: 0.33100694, y: 0.00000001623643, z: -0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: 1.1846008, y: 6.664068, z: -11.578033}
+  m_LocalRotation: {x: 0.33100694, y: 0.000000016236429, z: -0.000000005695432, w: 0.9436283}
+  m_LocalPosition: {x: 1.1846008, y: 6.6640687, z: -11.578033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 6730067268792035709}
   - component: {fileID: 6730067268792035710}
   - component: {fileID: 6730067268792035711}
-  - component: {fileID: 6730067268792035708}
+  - component: {fileID: 8820784011648120716}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
---- !u!114 &6730067268792035708
+--- !u!114 &8820784011648120716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,12 +279,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6730067268792035706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 8, z: -10}
-  m_XDamping: 0
+  m_BindingMode: 5
+  m_FollowOffset: {x: 0, y: 6.87, z: -10}
+  m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 0
   m_AngularDampingMode: 0
@@ -292,6 +292,38 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+  m_Heading:
+    m_Definition: 2
+    m_VelocityFilterStrength: 4
+    m_Bias: 0
+  m_RecenterToTargetHeading:
+    m_enabled: 1
+    m_WaitTime: 1
+    m_RecenteringTime: 2
+    m_LegacyHeadingDefinition: -1
+    m_LegacyVelocityFilterStrength: -1
+  m_XAxis:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 300
+    m_AccelTime: 0.1
+    m_DecelTime: 0.1
+    m_InputAxisName: 
+    m_InputAxisValue: 0
+    m_InvertInput: 1
+    m_MinValue: -180
+    m_MaxValue: 180
+    m_Wrap: 1
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 1
+      m_RecenteringTime: 2
+      m_LegacyHeadingDefinition: -1
+      m_LegacyVelocityFilterStrength: -1
+  m_LegacyRadius: 3.4028235e+38
+  m_LegacyHeightOffset: 3.4028235e+38
+  m_LegacyHeadingBias: 3.4028235e+38
+  m_HeadingIsSlave: 0
 --- !u!1 &6730067269014390897
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +335,7 @@ GameObject:
   - component: {fileID: 6730067269014390899}
   - component: {fileID: 6730067269014390896}
   m_Layer: 0
-  m_Name: PlayerCam
+  m_Name: StaticCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,8 +348,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6730067269014390897}
-  m_LocalRotation: {x: 0.33100694, y: 0.00000001623643, z: -0.0000000056954326, w: 0.9436283}
-  m_LocalPosition: {x: 1.1846008, y: 6.664068, z: -11.578033}
+  m_LocalRotation: {x: 0.23044012, y: 0.60081404, z: -0.18649507, w: 0.7423877}
+  m_LocalPosition: {x: -8.595642, y: 5.5340686, z: -3.6628723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -513,12 +545,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdcebb7a97edcb44b546aeb20e8f5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCam: {fileID: 6730067269014390896}
   moveLayer:
     serializedVersion: 2
     m_Bits: 1
-  freeCam: {fileID: 6730067269014390897}
-  staticCam: {fileID: 3304709018530553346}
+  freeCam: {fileID: 3304709018530553346}
+  staticCam: {fileID: 6730067269014390897}
   spawnPoint: {fileID: 1034599023}
   playerObjs:
   - {fileID: 4053718101241212739}
