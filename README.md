@@ -44,6 +44,11 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/tools/particles-effects/quick-outline-115488
 - https://assetstore.unity.com/packages/vfx/particles/fire-explosions/inferno-vfx-50735
 - https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-1-free-36405
+- https://assetstore.unity.com/packages/audio/music/fantasy-tavern-music-pack-201168
+- https://assetstore.unity.com/packages/3d/props/weapons/free-rpg-weapons-199738
+- https://assetstore.unity.com/packages/audio/sound-fx/weapons/bow-and-hammer-sound-effects-163948
+- https://assetstore.unity.com/packages/tools/particles-effects/melee-weapon-trail-1728
+
 
 Used Assets (Outside of Unity)  
 - https://sketchfab.com/3d-models/stylized-rock-agustin-honnun-ae21c3d47cb14323a3bb06ccb562e368
