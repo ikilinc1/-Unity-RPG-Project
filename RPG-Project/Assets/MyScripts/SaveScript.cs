@@ -11,6 +11,10 @@ public class SaveScript : MonoBehaviour
     public static GameObject theTarget;
     public static float manaAmount = 1f;
     public static bool invisible = false;
+    public static float strengthAmount = 0.1f;
+    public static float manaPowerAmount = 0.1f;
+    public static float staminaPowerAmount = 0.1f;
+    public static int killAmount = 0;
     
     // Start is called before the first frame update
     void Start()
