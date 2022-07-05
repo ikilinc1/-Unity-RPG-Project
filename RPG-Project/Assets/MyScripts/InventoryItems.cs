@@ -13,6 +13,10 @@ public class InventoryItems : MonoBehaviour
     public GameObject potionBook;
     public GameObject theCanvas;
 
+    public GameObject inventoryScreen;
+    public GameObject statsScreen;
+    public GameObject characterDisplay;
+
     private AudioSource audioPlayer;
     public AudioClip bookOpenSound;
     public AudioClip selectSound;
@@ -245,6 +249,7 @@ public class InventoryItems : MonoBehaviour
         audioPlayer.clip = bookOpenSound;
         audioPlayer.Play();
         SaveScript.theTarget = null;
+        OpenInventoryScreen();
         Time.timeScale = 0;
     }
     
@@ -255,7 +260,22 @@ public class InventoryItems : MonoBehaviour
         closedBook.SetActive(true);
         audioPlayer.clip = bookOpenSound;
         audioPlayer.Play();
+        characterDisplay.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void OpenInventoryScreen()
+    {
+        statsScreen.SetActive(false);
+        characterDisplay.SetActive(false);
+        inventoryScreen.SetActive(true);
+    }
+    
+    public void OpenStatsScreen()
+    {
+        inventoryScreen.SetActive(false);
+        statsScreen.SetActive(true);
+        characterDisplay.SetActive(true);
     }
 
     public void OpenPotionBook()
@@ -278,7 +298,6 @@ public class InventoryItems : MonoBehaviour
     }
     
     IEnumerator FindPlayer()
-
     {
 
         yield return new WaitForSeconds(0.5f);
