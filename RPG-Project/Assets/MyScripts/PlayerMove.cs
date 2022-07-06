@@ -34,6 +34,7 @@ public class PlayerMove : MonoBehaviour
     private WaitForSeconds approachEnemy = new WaitForSeconds(0.3f);
 
     public GameObject[] playerObjs;
+    public GameObject[] weapons;
     
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,10 @@ public class PlayerMove : MonoBehaviour
         freeCam.SetActive(true);
         staticCam.SetActive(false);
         SaveScript.spawnPoint = spawnPoint;
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -61,6 +66,17 @@ public class PlayerMove : MonoBehaviour
         pos = Input.mousePosition;
         ct.m_FollowOffset = currPos;
         //ct.m_FollowOffset = new Vector3(currPos.x, currPos.y * 3, currPos.x * 2);
+        
+        // Switch on correct weapon
+        if (SaveScript.weaponChange)
+        {
+            SaveScript.weaponChange = false;
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                weapons[i].SetActive(false);
+            }
+            weapons[SaveScript.weaponChoice].SetActive(true);
+        }
         
         if (Input.GetMouseButtonDown(0))
         {

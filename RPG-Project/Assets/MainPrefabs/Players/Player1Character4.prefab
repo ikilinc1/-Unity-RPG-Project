@@ -789,7 +789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6267923232080833068}
-  m_LocalRotation: {x: -0.033407487, y: 0.9489646, z: -0.29456228, w: -0.10762588}
+  m_LocalRotation: {x: -0.033407487, y: 0.9489646, z: -0.29456228, w: -0.10762586}
   m_LocalPosition: {x: 2.2394714, y: 6.87, z: 9.746002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5703,6 +5703,13 @@ MonoBehaviour:
   - {fileID: 7707963581384815176}
   - {fileID: 3644904800586971288}
   - {fileID: 1098467581673062876}
+  weapons:
+  - {fileID: 4679714161162097204}
+  - {fileID: 3249687117240430888}
+  - {fileID: 4886984635935019885}
+  - {fileID: 6993854181107040631}
+  - {fileID: 6437464739543952543}
+  - {fileID: 824284226413457324}
 --- !u!1 &7710038245710181176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,6 +6425,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1984807636101475535, guid: c8f328ffdc9cd3646ab8b4c340edbbba, type: 3}
   m_PrefabInstance: {fileID: 1995330519204305369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &824284226413457324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1207145758441076341, guid: c8f328ffdc9cd3646ab8b4c340edbbba, type: 3}
+  m_PrefabInstance: {fileID: 1995330519204305369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3249687117240399752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6484,6 +6496,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 33d713fc22667954ba9af3f9422003f2, type: 3}
   m_PrefabInstance: {fileID: 3249687117240399752}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3249687117240430888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 33d713fc22667954ba9af3f9422003f2, type: 3}
+  m_PrefabInstance: {fileID: 3249687117240399752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4406333494352226924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6545,6 +6562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a4ffc4311ba5e4c81b0fc76531c362, type: 3}
+--- !u!1 &6993854181107040631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6640937691796024091, guid: d2a4ffc4311ba5e4c81b0fc76531c362, type: 3}
+  m_PrefabInstance: {fileID: 4406333494352226924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7657520135778098125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6296745903544955297, guid: d2a4ffc4311ba5e4c81b0fc76531c362, type: 3}
@@ -6616,6 +6638,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1f1cd6faa38270c449338bafe0a4b7ce, type: 3}
   m_PrefabInstance: {fileID: 4679714161162130580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4679714161162097204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1f1cd6faa38270c449338bafe0a4b7ce, type: 3}
+  m_PrefabInstance: {fileID: 4679714161162130580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6815416738887220485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6682,6 +6709,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 903132066109016864, guid: 0b87c5c82fdfc6c4686ad668eb24450e, type: 3}
   m_PrefabInstance: {fileID: 6815416738887220485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6437464739543952543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 559362766050234778, guid: 0b87c5c82fdfc6c4686ad668eb24450e, type: 3}
+  m_PrefabInstance: {fileID: 6815416738887220485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7134604731501139571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6743,6 +6775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992bb947a6df6634487686c2fe6330bc, type: 3}
+--- !u!1 &4886984635935019885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2364736775823328542, guid: 992bb947a6df6634487686c2fe6330bc, type: 3}
+  m_PrefabInstance: {fileID: 7134604731501139571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5231456597452163543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3142082337486987172, guid: 992bb947a6df6634487686c2fe6330bc, type: 3}
