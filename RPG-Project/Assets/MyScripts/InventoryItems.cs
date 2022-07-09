@@ -78,7 +78,9 @@ public class InventoryItems : MonoBehaviour
     private float weightAmount = 1.0f;
     private bool changeWeight = false;
     private AnimatorStateInfo playerInfo;
-    
+
+    public bool[] weapons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -276,6 +278,7 @@ public class InventoryItems : MonoBehaviour
         inventoryScreen.SetActive(false);
         statsScreen.SetActive(true);
         characterDisplay.SetActive(true);
+        statsScreen.GetComponent<StatsUpdate>().updateWeapons = true;
     }
 
     public void OpenPotionBook()
