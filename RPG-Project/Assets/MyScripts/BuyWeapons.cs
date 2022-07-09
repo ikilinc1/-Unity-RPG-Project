@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BuyWeapons : MonoBehaviour
 {
     public int weaponNumber;
+    public int armorNumber;
     public int cost;
     public Text currencyText;
     public GameObject inventoryObj;
@@ -24,6 +25,19 @@ public class BuyWeapons : MonoBehaviour
         {
             InventoryItems.gold -= cost;
             inventoryObj.GetComponent<InventoryItems>().weapons[weaponNumber] = true;
+            audioPlayer.clip = inventoryObj.GetComponent<InventoryItems>().buySound;
+            audioPlayer.Play();
+            currencyText.text = InventoryItems.gold.ToString();
+        }
+    }
+    
+    public void BuyArmor()
+    {
+        if (InventoryItems.gold >= cost)
+        {
+            SaveScript.armor = armorNumber;
+            SaveScript.changeArmor = true;
+            InventoryItems.gold -= cost;
             audioPlayer.clip = inventoryObj.GetComponent<InventoryItems>().buySound;
             audioPlayer.Play();
             currencyText.text = InventoryItems.gold.ToString();

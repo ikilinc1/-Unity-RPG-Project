@@ -35,6 +35,9 @@ public class PlayerMove : MonoBehaviour
 
     public GameObject[] playerObjs;
     public GameObject[] weapons;
+
+    public GameObject[] armorTorso;
+    public GameObject[] armorLegs;
     
     // Start is called before the first frame update
     void Start()
@@ -166,15 +169,32 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
-        if (!playerObjs[0].activeSelf)
+        if (SaveScript.manaAmount <= 0.1f)
         {
             if (!SaveScript.invisible)
             {
                 for (int i = 0; i < playerObjs.Length; i++)
                 {
                     playerObjs[i].SetActive(true);
+                    SaveScript.changeArmor = true;
                 }
             }
+        }
+
+        if (SaveScript.changeArmor)
+        {
+            for (int i = 0; i < armorTorso.Length; i++)
+            {
+                armorTorso[i].SetActive(false);
+            }
+            armorTorso[SaveScript.armor].SetActive(true);
+            for (int i = 0; i < armorLegs.Length; i++)
+            {
+                armorLegs[i].SetActive(false);
+            }
+            armorLegs[SaveScript.armor].SetActive(true);
+
+            SaveScript.changeArmor = false;
         }
     }
 

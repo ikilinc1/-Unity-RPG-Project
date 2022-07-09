@@ -1208,7 +1208,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2188648655908308943}
-  m_LocalRotation: {x: 0.33100694, y: 0.000000016236429, z: -0.000000005695432, w: 0.9436283}
+  m_LocalRotation: {x: 0.33100694, y: -0.000000016236429, z: 0.000000005695432, w: 0.9436283}
   m_LocalPosition: {x: 0, y: 8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5356,10 +5356,14 @@ MonoBehaviour:
   staticCam: {fileID: 4370837261869359462}
   spawnPoint: {fileID: 7952107630195602740}
   playerObjs:
-  - {fileID: 7371451468396621108}
-  - {fileID: 7371096279145963672}
   - {fileID: 4046137430448069392}
   - {fileID: 5257618995772743845}
+  - {fileID: 7371451468396621108}
+  - {fileID: 7371096279145963672}
+  - {fileID: 438775868932034306}
+  - {fileID: 2662815277038407213}
+  - {fileID: 6596599800462101458}
+  - {fileID: 7609582836362036571}
   weapons:
   - {fileID: 2844805259402235359}
   - {fileID: 2844805260905039077}
@@ -5367,6 +5371,14 @@ MonoBehaviour:
   - {fileID: 8886621220135106323}
   - {fileID: 2358063452814584330}
   - {fileID: 4015631850291132872}
+  armorTorso:
+  - {fileID: 7371451468396621108}
+  - {fileID: 438775868932034306}
+  - {fileID: 6596599800462101458}
+  armorLegs:
+  - {fileID: 7371096279145963672}
+  - {fileID: 2662815277038407213}
+  - {fileID: 7609582836362036571}
 --- !u!1 &6938929903197081776
 GameObject:
   m_ObjectHideFlags: 0
