@@ -2829,6 +2829,7 @@ GameObject:
   - component: {fileID: 1407252103781538241}
   - component: {fileID: 1351758362970937423}
   - component: {fileID: 1298075058153417767}
+  - component: {fileID: 7538556753640987114}
   m_Layer: 0
   m_Name: Player1Male3Display
   m_TagString: Untagged
@@ -2923,6 +2924,26 @@ MonoBehaviour:
     - prefab: {fileID: 100000, guid: 790f4551bb671cc43bea7a0943c1162f, type: 3}
     slots: 4
   disabledGraySkeleton: {fileID: 0}
+--- !u!114 &7538556753640987114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409803320475049437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835f7ccb2ae510a4ea9f772a448ee6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorTorso:
+  - {fileID: 1157586265092538499}
+  - {fileID: 2599045871193494464}
+  - {fileID: 557867339901200205}
+  armorLegs:
+  - {fileID: 1159012546093079823}
+  - {fileID: 8522226051245661161}
+  - {fileID: 5203227480748650695}
 --- !u!1 &1409803698027365711
 GameObject:
   m_ObjectHideFlags: 0

@@ -1491,6 +1491,7 @@ GameObject:
   - component: {fileID: 1775271724596388106}
   - component: {fileID: 1866444622818369668}
   - component: {fileID: 1812461407481517292}
+  - component: {fileID: 1690550295469784570}
   m_Layer: 0
   m_Name: Player1Male4Display
   m_TagString: Untagged
@@ -1585,6 +1586,26 @@ MonoBehaviour:
     - prefab: {fileID: 100000, guid: 790f4551bb671cc43bea7a0943c1162f, type: 3}
     slots: 4
   disabledGraySkeleton: {fileID: 0}
+--- !u!114 &1690550295469784570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780110192400786710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835f7ccb2ae510a4ea9f772a448ee6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorTorso:
+  - {fileID: 1807376342780436360}
+  - {fileID: 789590573326774414}
+  - {fileID: 3101185400759239029}
+  armorLegs:
+  - {fileID: 1805985657310429700}
+  - {fileID: 339158612731772548}
+  - {fileID: 4184964214282274856}
 --- !u!1 &1780117195353191856
 GameObject:
   m_ObjectHideFlags: 0

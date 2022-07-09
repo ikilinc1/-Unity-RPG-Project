@@ -279,6 +279,7 @@ public class InventoryItems : MonoBehaviour
         statsScreen.SetActive(true);
         characterDisplay.SetActive(true);
         statsScreen.GetComponent<StatsUpdate>().updateWeapons = true;
+        characterDisplay.GetComponentInChildren<DisplayArmor>().UpdateArmor();
     }
 
     public void OpenPotionBook()
