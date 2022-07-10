@@ -97,7 +97,6 @@ public class PlayerMove : MonoBehaviour
             {
                 anim.SetTrigger(attacks[SaveScript.weaponChoice]);
                 audioPlayer.clip = weaponSounds[SaveScript.weaponChoice];
-                audioPlayer.Play();
             }
         }
         
@@ -218,6 +217,11 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void PlayWeaponSound()
+    {
+        audioPlayer.Play();
+    }
+    
     IEnumerator MoveTo()
     {
         yield return approachEnemy;
