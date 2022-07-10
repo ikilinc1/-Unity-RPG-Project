@@ -40,6 +40,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject[] armorLegs;
     public string[] attacks;
     private AnimatorStateInfo playerInfo;
+    public AudioSource audioPlayer;
+    public AudioClip[] weaponSounds;
     
     // Start is called before the first frame update
     void Start()
@@ -94,6 +96,8 @@ public class PlayerMove : MonoBehaviour
             if (SaveScript.carryingWeapon)
             {
                 anim.SetTrigger(attacks[SaveScript.weaponChoice]);
+                audioPlayer.clip = weaponSounds[SaveScript.weaponChoice];
+                audioPlayer.Play();
             }
         }
         
