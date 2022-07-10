@@ -49,6 +49,9 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/3d/props/weapons/free-rpg-weapons-199738
 - https://assetstore.unity.com/packages/audio/sound-fx/weapons/bow-and-hammer-sound-effects-163948
 - https://assetstore.unity.com/packages/tools/particles-effects/melee-weapon-trail-1728
+- https://assetstore.unity.com/packages/3d/animations/rpg-character-mecanim-animation-pack-free-65284
+- https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-2-free-42454
+- https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-3-free-47320
 
 
 Used Assets (Outside of Unity)  
