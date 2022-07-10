@@ -43,6 +43,9 @@ public class PlayerMove : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioClip[] weaponSounds;
     
+    private GameObject trailObj;
+    private WaitForSeconds trailTimeOff = new WaitForSeconds(0.1f);
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +92,7 @@ public class PlayerMove : MonoBehaviour
                 weapons[i].SetActive(false);
             }
             weapons[SaveScript.weaponChoice].SetActive(true);
+            StartCoroutine(TurnOffTrail());
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
@@ -221,10 +225,27 @@ public class PlayerMove : MonoBehaviour
     {
         audioPlayer.Play();
     }
+
+    public void TrailOn()
+    {
+        trailObj.GetComponent<Renderer>().enabled = true;
+    }
+    
+    public void TrailOff()
+    {
+        trailObj.GetComponent<Renderer>().enabled = false;
+    }
     
     IEnumerator MoveTo()
     {
         yield return approachEnemy;
         nav.isStopped = true;
+    }
+    
+    IEnumerator TurnOffTrail()
+    {
+        yield return trailTimeOff;
+        trailObj = GameObject.Find("Trail");
+        trailObj.GetComponent<Renderer>().enabled = false;
     }
 }
