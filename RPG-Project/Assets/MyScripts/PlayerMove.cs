@@ -39,6 +39,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject[] armorTorso;
     public GameObject[] armorLegs;
     public string[] attacks;
+    private AnimatorStateInfo playerInfo;
     
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,12 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Listen to the animator
+        if (anim)
+        {
+            playerInfo = anim.GetCurrentAnimatorStateInfo(0);
+        }
+        
         // Calculate velocity
         var velocity = nav.velocity;
         x = velocity.x;
@@ -90,7 +97,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && playerInfo.IsTag("nonAttack") && !anim.IsInTransition(0))
         {
             if (canMove)
             {
