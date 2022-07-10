@@ -38,6 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     public GameObject[] armorTorso;
     public GameObject[] armorLegs;
+    public string[] attacks;
     
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,14 @@ public class PlayerMove : MonoBehaviour
                 weapons[i].SetActive(false);
             }
             weapons[SaveScript.weaponChoice].SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (SaveScript.carryingWeapon)
+            {
+                anim.SetTrigger(attacks[SaveScript.weaponChoice]);
+            }
         }
         
         if (Input.GetMouseButtonDown(0))
