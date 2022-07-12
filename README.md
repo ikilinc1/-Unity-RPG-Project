@@ -9,8 +9,10 @@ Used Packages (Unity Registry)
 - Post Processing 3.2.2
 - Cinemachine 2.8.6
 
-
-Used Assets (Unity Store)  
+### Used Assets (Unity Store)
+<details>
+  <summary>Click to expand!</summary>
+  
 - https://assetstore.unity.com/packages/3d/characters/medieval-cartoon-warriors-90079
 - https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-house-modular-lite-189718
 - https://assetstore.unity.com/packages/3d/props/furniture/alchemy-lab-props-41758
@@ -52,23 +54,33 @@ Used Assets (Unity Store)
 - https://assetstore.unity.com/packages/3d/animations/rpg-character-mecanim-animation-pack-free-65284
 - https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-2-free-42454
 - https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-3-free-47320
+</details>
 
+### Used Assets (Outside of Unity)  
+<details>
+  <summary>Click to expand!</summary>
 
-Used Assets (Outside of Unity)  
 - https://sketchfab.com/3d-models/stylized-rock-agustin-honnun-ae21c3d47cb14323a3bb06ccb562e368
 - https://sketchfab.com/3d-models/stylized-character-pedestal-agustin-honnun-6e40b7b727034ee7a2949dcbadddc919
 - https://sketchfab.com/3d-models/stylized-fences-set-agustin-honnun-de8a95edea634ff5bed2c2c6c7c5d1ae
 - https://www.cgtrader.com/free-3d-models/character/fantasy/lowpoly-hand-painted-wizard
 - https://www.pngrepo.com/svg/239395/chat-conversation
 - https://www.mixamo.com
+</details>
 
-Icons used:  
+
+### Icons used  
+<details>
+  <summary>Click to expand!</summary>
+
 - https://opengameart.org/content/free-rpg-icons-2
 - https://opengameart.org/content/resouces-pack-1
 - https://opengameart.org/content/alchemical-ingredient-icons-pack
 - https://opengameart.org/content/rpg-book-icons-pack
 - https://opengameart.org/content/attack-icons-wesnoth
 - https://opengameart.org/content/rpg-icons-set
+</details>
+
 
 Unity version-->2021.3.3f1  
 Current proggress --> Work in progress.
