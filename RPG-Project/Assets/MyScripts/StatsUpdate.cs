@@ -17,6 +17,10 @@ public class StatsUpdate : MonoBehaviour
     public GameObject inventoryObj;
     public bool updateWeapons = true;
     public GameObject[] items;
+    
+    /*Custom*/
+    private bool setBlacksmith = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +28,12 @@ public class StatsUpdate : MonoBehaviour
         if (SaveScript.pchar == 1 || SaveScript.pchar == 5 || SaveScript.pchar == 6 || SaveScript.pchar == 7)
         {
             items[0].SetActive(true);
+            items[1].SetActive(false);
         }
         else
         {
             items[1].SetActive(true);
+            items[0].SetActive(false);
         }
     }
 
@@ -40,6 +46,21 @@ public class StatsUpdate : MonoBehaviour
         manaBar.fillAmount = SaveScript.manaPowerAmount;
         staminaBar.fillAmount = SaveScript.staminaPowerAmount;
 
+        if (setBlacksmith)
+        {
+            setBlacksmith = false;
+            if (SaveScript.pchar == 1 || SaveScript.pchar == 5 || SaveScript.pchar == 6 || SaveScript.pchar == 7)
+            {
+                items[0].SetActive(true);
+                items[1].SetActive(false);
+            }
+            else
+            {
+                items[1].SetActive(true);
+                items[0].SetActive(false);
+            }
+        }
+        
         if (updateWeapons)
         {
             for (int i = 0; i < weaponButtons.Length; i++)
