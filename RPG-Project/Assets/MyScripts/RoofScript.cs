@@ -9,6 +9,8 @@ public class RoofScript : MonoBehaviour
     public GameObject props;
     public GameObject myCamera;
     public bool tavern = true;
+    public bool wizard = false;
+    public bool blacksmith = false;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,16 @@ public class RoofScript : MonoBehaviour
                 myCamera.GetComponent<AudioManager>().musicState = 2;
                 myCamera.GetComponent<AudioManager>().canPlay = true;
             }
+            if (wizard)
+            {
+                myCamera.GetComponent<AudioManager>().musicState = 5;
+                myCamera.GetComponent<AudioManager>().canPlay = true;
+            }
+            if (blacksmith)
+            {
+                myCamera.GetComponent<AudioManager>().musicState = 4;
+                myCamera.GetComponent<AudioManager>().canPlay = true;
+            }
         }
     }
     
@@ -37,11 +49,9 @@ public class RoofScript : MonoBehaviour
         {
             roof.SetActive(true);
             props.SetActive(false);
-            if (tavern)
-            {
-                myCamera.GetComponent<AudioManager>().musicState = 1;
-                myCamera.GetComponent<AudioManager>().canPlay = true;
-            }
+            myCamera.GetComponent<AudioManager>().musicState = 1;
+            myCamera.GetComponent<AudioManager>().canPlay = true;
+            
         }
     }
     
