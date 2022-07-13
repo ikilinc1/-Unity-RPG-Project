@@ -44,7 +44,10 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         shopOwnerMessage.text = "Sure, as long as you have some coins.";
         shopUI[shopNumber].SetActive(true);
-        shopUI[shopNumber].GetComponent<BuyScript>().UpdateGold();
+        if (shopNumber < 6)
+        {
+            shopUI[shopNumber].GetComponent<BuyScript>().UpdateGold();
+        }
     }
 
     private void Update()
