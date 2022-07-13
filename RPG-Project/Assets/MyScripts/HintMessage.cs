@@ -78,12 +78,12 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
             hintBox.SetActive(true);
             if (left)
             {
-                screenPoint.x = Input.mousePosition.x + 320;
+                screenPoint.x = Input.mousePosition.x + Screen.width/4f;
             }
 
             if (!left)
             {
-                screenPoint.x = Input.mousePosition.x - 320;
+                screenPoint.x = Input.mousePosition.x - Screen.width/4f;
             }
             screenPoint.y = Input.mousePosition.y + 150;
             screenPoint.z = 1f;
