@@ -45,6 +45,7 @@ public class PlayerMove : MonoBehaviour
     
     private GameObject trailObj;
     private WaitForSeconds trailTimeOff = new WaitForSeconds(0.1f);
+    public float[] staminaCost;
     
     // Start is called before the first frame update
     void Start()
@@ -97,10 +98,11 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (SaveScript.carryingWeapon)
+            if (SaveScript.carryingWeapon && SaveScript.staminaAmount > 0.2f)
             {
                 anim.SetTrigger(attacks[SaveScript.weaponChoice]);
                 audioPlayer.clip = weaponSounds[SaveScript.weaponChoice];
+                SaveScript.staminaAmount -= staminaCost[SaveScript.weaponChoice];
             }
         }
         

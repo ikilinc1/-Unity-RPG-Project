@@ -72,6 +72,7 @@ public class InventoryItems : MonoBehaviour
 
     public GameObject[] magicParticles;
     public Image manaBar;
+    public Image staminaBar;
 
     private GameObject playerObj;
     private Animator playerAnim;
@@ -191,6 +192,11 @@ public class InventoryItems : MonoBehaviour
         }
 
         manaBar.fillAmount = SaveScript.manaAmount;
+
+        if (SaveScript.staminaAmount != staminaBar.fillAmount)
+        {
+            staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, SaveScript.staminaAmount, 2 * Time.deltaTime);
+        }
 
         if (playerInfo.IsTag("magic"))
         {
