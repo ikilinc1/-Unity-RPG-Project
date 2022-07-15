@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 1184603188259147385}
   - component: {fileID: 1795880631}
   m_Layer: 0
-  m_Name: Spear1H_Epic (1)
+  m_Name: Spear1H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2554,7 +2554,7 @@ GameObject:
   - component: {fileID: 3249687117242429416}
   - component: {fileID: 7478884483440327610}
   m_Layer: 0
-  m_Name: Sword_2_Long (1)
+  m_Name: Sword_2_Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3227,7 +3227,7 @@ GameObject:
   - component: {fileID: 4679714161159834868}
   - component: {fileID: 7478884483440327611}
   m_Layer: 0
-  m_Name: Sword_1_Short (1)
+  m_Name: Sword_1_Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3538,7 +3538,7 @@ GameObject:
   - component: {fileID: 6400445006235923128}
   - component: {fileID: 7478884483440327609}
   m_Layer: 0
-  m_Name: Axe1H_Epic (1)
+  m_Name: Axe1H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4314,7 +4314,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6267923232080833068}
-  m_LocalRotation: {x: 0.25499988, y: 0.48707014, z: -0.15118831, w: 0.82151073}
+  m_LocalRotation: {x: 0.2549999, y: 0.48707014, z: -0.15118833, w: 0.82151073}
   m_LocalPosition: {x: -8.773727, y: 6.87, z: -4.7980957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 4780153615105985866}
   - component: {fileID: 844868741}
   m_Layer: 0
-  m_Name: Mace2H_Epic (1)
+  m_Name: Mace2H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4948,7 +4948,7 @@ GameObject:
   - component: {fileID: 8795482942192984226}
   - component: {fileID: 245961789}
   m_Layer: 0
-  m_Name: Axe2H_Epic (1)
+  m_Name: Axe2H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

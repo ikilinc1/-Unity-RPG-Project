@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 482146107835576961}
   - component: {fileID: 4629545646762622125}
   m_Layer: 0
-  m_Name: Sword_2_Long (1)
+  m_Name: Sword_2_Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3180,7 +3180,7 @@ GameObject:
   - component: {fileID: 1078273919083225969}
   - component: {fileID: 1883651590}
   m_Layer: 0
-  m_Name: Spear1H_Epic (1)
+  m_Name: Spear1H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4048,7 +4048,7 @@ GameObject:
   - component: {fileID: 4290592485982181609}
   - component: {fileID: 4629545646762622124}
   m_Layer: 0
-  m_Name: Axe1H_Epic (1)
+  m_Name: Axe1H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7683,7 +7683,7 @@ GameObject:
   - component: {fileID: 5544106711082063693}
   - component: {fileID: 1698496338}
   m_Layer: 0
-  m_Name: Axe2H_Epic (1)
+  m_Name: Axe2H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7920,7 +7920,7 @@ GameObject:
   - component: {fileID: 6699227374141206044}
   - component: {fileID: 4629545646762622126}
   m_Layer: 0
-  m_Name: Sword_1_Short (1)
+  m_Name: Sword_1_Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8064,7 +8064,7 @@ GameObject:
   - component: {fileID: 4954413970448499848}
   - component: {fileID: 896290084}
   m_Layer: 0
-  m_Name: Mace2H_Epic (1)
+  m_Name: Mace2H_Epic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
