@@ -17,11 +17,15 @@ public class ChestScript : MonoBehaviour
     private int goldDisplay;
     public GameObject inventoryObj;
     public AudioClip openChest;
+    public bool crate = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        if (!crate)
+        {
+            anim = GetComponent<Animator>();
+        }
         canvasText.SetActive(false);
         goldDisplay = goldAmount;
     }
@@ -38,26 +42,33 @@ public class ChestScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!crate)
         {
-            if (InventoryItems.key)
+            if (other.CompareTag("Player"))
             {
-                anim.SetTrigger("open");
-                InventoryItems.gold += goldAmount;
-                goldAmount = 0;
-                inventoryObj.GetComponent<AudioSource>().clip = openChest;
-                inventoryObj.GetComponent<AudioSource>().Play();
+                if (InventoryItems.key)
+                {
+                    anim.SetTrigger("open");
+                    InventoryItems.gold += goldAmount;
+                    goldAmount = 0;
+                    inventoryObj.GetComponent<AudioSource>().clip = openChest;
+                    inventoryObj.GetComponent<AudioSource>().Play();
+                }
             }
         }
+        
     }
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!crate)
         {
-            if (InventoryItems.key)
+            if (other.CompareTag("Player"))
             {
-                anim.SetTrigger("close");
+                if (InventoryItems.key)
+                {
+                    anim.SetTrigger("close");
+                }
             }
         }
     }
@@ -71,5 +82,12 @@ public class ChestScript : MonoBehaviour
     {
         Instantiate(particleEffect, spawnPoint.transform.position, spawnPoint.transform.rotation);
         canvasText.SetActive(true);
+        if (crate)
+        {
+            InventoryItems.gold += goldAmount;
+            goldAmount = 0;
+            inventoryObj.GetComponent<AudioSource>().clip = openChest;
+            inventoryObj.GetComponent<AudioSource>().Play();
+        }
     }
 }
