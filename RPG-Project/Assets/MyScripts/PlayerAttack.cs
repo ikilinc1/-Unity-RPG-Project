@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public int damageAmount;
     private GameObject objToDestroy;
     // Start is called before the first frame update
     void Start()
