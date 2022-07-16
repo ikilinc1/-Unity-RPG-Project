@@ -54,6 +54,12 @@ Used Packages (Unity Registry)
 - https://assetstore.unity.com/packages/3d/animations/rpg-character-mecanim-animation-pack-free-65284
 - https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-2-free-42454
 - https://assetstore.unity.com/packages/3d/animations/warrior-pack-bundle-3-free-47320
+- https://assetstore.unity.com/packages/3d/characters/creatures/pbr-orc-pig-109248
+- https://assetstore.unity.com/packages/3d/characters/animals/insects/spider-green-11869
+- https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/toon-rts-units-orcs-demo-101359
+- https://assetstore.unity.com/packages/3d/characters/creatures/dragon-for-boss-monster-hp-79398
+- https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/rpg-skeleton-35463
+- https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
 </details>
 
 ### Used Assets (Outside of Unity)  
