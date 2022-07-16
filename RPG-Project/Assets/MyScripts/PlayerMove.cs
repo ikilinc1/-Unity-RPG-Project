@@ -119,6 +119,7 @@ public class PlayerMove : MonoBehaviour
                         nav.isStopped = false;
                         SaveScript.theTarget = hit.transform.gameObject;
                         nav.destination = hit.point;
+                        transform.LookAt(SaveScript.theTarget.transform);
                         StartCoroutine(MoveTo());
                     }
                     else

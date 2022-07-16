@@ -22,6 +22,8 @@ public class EnemyMove : MonoBehaviour
     
     public GameObject thisEnemy;
     private bool outlineOn = false;
+
+    private WaitForSeconds lookTime = new WaitForSeconds(2);
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class EnemyMove : MonoBehaviour
         thisEnemy.GetComponent<Outline>().enabled = false;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        nav.avoidancePriority = Random.Range(5, 75);
     }
 
     // Update is called once per frame
@@ -84,6 +87,7 @@ public class EnemyMove : MonoBehaviour
                 {
                     isAttacking = true;
                     anim.SetTrigger("attack");
+                    StartCoroutine(LookAtPlayer());
                 }
             }
 
@@ -100,5 +104,11 @@ public class EnemyMove : MonoBehaviour
             nav.isStopped = false;
             nav.destination = player.transform.position;
         }
+    }
+
+    IEnumerator LookAtPlayer()
+    {
+        yield return lookTime;
+        transform.LookAt(player.transform);
     }
 }
