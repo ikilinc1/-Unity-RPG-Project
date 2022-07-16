@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
 {
     public int damageAmount;
     private GameObject objToDestroy;
+    private bool canDamage = true;
+    private WaitForSeconds damagePause = new WaitForSeconds(0.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +30,24 @@ public class PlayerAttack : MonoBehaviour
             Destroy(other.transform.gameObject);
             StartCoroutine(WaitForDestroy());
         }
+
+        if (other.CompareTag("enemy") && canDamage)
+        {
+            canDamage = false;
+            other.transform.gameObject.GetComponent<EnemyMove>().enemyHealth -= damageAmount;
+            StartCoroutine(ResetDamage());
+        }
     }
 
     IEnumerator WaitForDestroy()
     {
         yield return new WaitForSeconds(3);
         Destroy(objToDestroy);
+    }
+    
+    IEnumerator ResetDamage()
+    {
+        yield return damagePause;
+        canDamage = true;
     }
 }

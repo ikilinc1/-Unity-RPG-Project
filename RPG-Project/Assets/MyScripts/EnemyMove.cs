@@ -24,6 +24,10 @@ public class EnemyMove : MonoBehaviour
     private bool outlineOn = false;
 
     private WaitForSeconds lookTime = new WaitForSeconds(2);
+
+    public int enemyHealth = 100;
+    private int currentHealth;
+    private bool isAlive = true;
     
     // Start is called before the first frame update
     void Start()
@@ -32,83 +36,106 @@ public class EnemyMove : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         nav.avoidancePriority = Random.Range(5, 75);
+        currentHealth = enemyHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!outlineOn)
+        if (isAlive)
         {
-            outlineOn = true;
-            if (SaveScript.theTarget == thisEnemy)
+            if (!outlineOn)
             {
-                thisEnemy.GetComponent<Outline>().enabled = true;
+                outlineOn = true;
+                if (SaveScript.theTarget == thisEnemy)
+                {
+                    thisEnemy.GetComponent<Outline>().enabled = true;
+                }
+            }
+            if (outlineOn)
+            {
+                if (SaveScript.theTarget != thisEnemy)
+                {
+                    thisEnemy.GetComponent<Outline>().enabled = false;
+                    outlineOn = false;
+                }
+            }
+
+            if (player == null)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
+            // Calculate velocity
+            var velocity = nav.velocity;
+            x = velocity.x;
+            z = velocity.z;
+            velocitySpeed = x + z;
+
+            if (velocitySpeed == 0)
+            {
+                anim.SetBool("running", false);
+            }
+            else
+            {
+                anim.SetBool("running", true);
+                isAttacking = false;
+            }
+
+            enemyInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+            distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distance < attackRange || distance > runRange)
+            {
+                nav.isStopped = true;
+                if (distance < attackRange && enemyInfo.IsTag("nonAttack"))
+                {
+                    if (!isAttacking)
+                    {
+                        isAttacking = true;
+                        anim.SetTrigger("attack");
+                        StartCoroutine(LookAtPlayer());
+                    }
+                }
+
+                if (distance < attackRange && enemyInfo.IsTag("attack"))
+                {
+                    if (isAttacking)
+                    {
+                        isAttacking = false;
+                    }
+                }
+            }
+            else
+            {
+                nav.isStopped = false;
+                nav.destination = player.transform.position;
+            }
+
+            if (currentHealth > enemyHealth)
+            {
+                anim.SetTrigger("hit");
+                currentHealth = enemyHealth;
             }
         }
-        if (outlineOn)
-        {
-            if (SaveScript.theTarget != thisEnemy)
-            {
-                thisEnemy.GetComponent<Outline>().enabled = false;
-                outlineOn = false;
-            }
-        }
 
-        if (player == null)
+        if (enemyHealth <= 1 && isAlive)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
-        // Calculate velocity
-        var velocity = nav.velocity;
-        x = velocity.x;
-        z = velocity.z;
-        velocitySpeed = x + z;
-
-        if (velocitySpeed == 0)
-        {
-            anim.SetBool("running", false);
-        }
-        else
-        {
-            anim.SetBool("running", true);
-            isAttacking = false;
-        }
-
-        enemyInfo = anim.GetCurrentAnimatorStateInfo(0);
-
-        distance = Vector3.Distance(transform.position, player.transform.position);
-
-        if (distance < attackRange || distance > runRange)
-        {
+            isAlive = false;
             nav.isStopped = true;
-            if (distance < attackRange && enemyInfo.IsTag("nonAttack"))
-            {
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    anim.SetTrigger("attack");
-                    StartCoroutine(LookAtPlayer());
-                }
-            }
-
-            if (distance < attackRange && enemyInfo.IsTag("attack"))
-            {
-                if (isAttacking)
-                {
-                    isAttacking = false;
-                }
-            }
-        }
-        else
-        {
-            nav.isStopped = false;
-            nav.destination = player.transform.position;
+            anim.SetTrigger("death");
+            thisEnemy.GetComponent<Outline>().enabled = false;
+            outlineOn = false;
+            nav.avoidancePriority = 1;
         }
     }
 
     IEnumerator LookAtPlayer()
     {
         yield return lookTime;
-        transform.LookAt(player.transform);
+        if (isAlive)
+        {
+            transform.LookAt(player.transform);
+        }
     }
 }
