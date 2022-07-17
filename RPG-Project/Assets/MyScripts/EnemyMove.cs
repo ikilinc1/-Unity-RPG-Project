@@ -28,6 +28,8 @@ public class EnemyMove : MonoBehaviour
     public int enemyHealth = 100;
     private int currentHealth;
     private bool isAlive = true;
+
+    private AudioSource audioPlayer;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class EnemyMove : MonoBehaviour
         anim = GetComponent<Animator>();
         nav.avoidancePriority = Random.Range(5, 75);
         currentHealth = enemyHealth;
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -116,6 +119,7 @@ public class EnemyMove : MonoBehaviour
             {
                 anim.SetTrigger("hit");
                 currentHealth = enemyHealth;
+                audioPlayer.Play();
             }
         }
 
