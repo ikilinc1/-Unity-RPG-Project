@@ -24,8 +24,6 @@ public class EnemyMove : MonoBehaviour
     public GameObject thisEnemy;
     private bool outlineOn = false;
 
-    private WaitForSeconds lookTime = new WaitForSeconds(2);
-
     public int enemyHealth = 100;
     private int currentHealth;
     private bool isAlive = true;
@@ -34,6 +32,8 @@ public class EnemyMove : MonoBehaviour
     public Image healthBar;
     private float fillHealth;
     public GameObject mainCam;
+
+    private float rotateSpeed = 40.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -102,7 +102,11 @@ public class EnemyMove : MonoBehaviour
                     {
                         isAttacking = true;
                         anim.SetTrigger("attack");
-                        StartCoroutine(LookAtPlayer());
+                        
+                        // Look at player smoothly
+                        Vector3 pos = (player.transform.position - transform.position).normalized;
+                        Quaternion posRotation = Quaternion.LookRotation(new Vector3(pos.x, 0, pos.z));
+                        transform.rotation = Quaternion.Slerp(transform.rotation, posRotation, Time.deltaTime * rotateSpeed);
                     }
                 }
 
@@ -142,12 +146,5 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    IEnumerator LookAtPlayer()
-    {
-        yield return lookTime;
-        if (isAlive)
-        {
-            transform.LookAt(player.transform);
-        }
-    }
+
 }
