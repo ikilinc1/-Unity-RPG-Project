@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class EnemyMove : MonoBehaviour
     private bool isAlive = true;
 
     private AudioSource audioPlayer;
+    public Image healthBar;
+    private float fillHealth;
+    public GameObject mainCam;
     
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,7 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.transform.LookAt(mainCam.transform.position);
         if (isAlive)
         {
             if (!outlineOn)
@@ -120,6 +125,9 @@ public class EnemyMove : MonoBehaviour
                 anim.SetTrigger("hit");
                 currentHealth = enemyHealth;
                 audioPlayer.Play();
+                fillHealth = enemyHealth;
+                fillHealth /= 100.0f;
+                healthBar.fillAmount = fillHealth;
             }
         }
 
