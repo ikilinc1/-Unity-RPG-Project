@@ -34,6 +34,8 @@ public class EnemyMove : MonoBehaviour
     public GameObject mainCam;
 
     private float rotateSpeed = 40.0f;
+
+    public GameObject coins;
     
     // Start is called before the first frame update
     void Start()
@@ -143,7 +145,16 @@ public class EnemyMove : MonoBehaviour
             thisEnemy.GetComponent<Outline>().enabled = false;
             outlineOn = false;
             nav.avoidancePriority = 1;
+            StartCoroutine(IsDead());
         }
+    }
+
+
+    IEnumerator IsDead()
+    {
+        yield return new WaitForSeconds(1);
+        Instantiate(coins, transform.position, transform.rotation);
+        Destroy(gameObject, 0.2f);
     }
 
 
