@@ -22,6 +22,7 @@ public class SaveScript : MonoBehaviour
     public static int armor = 0;
     public static bool changeArmor = false;
     public static float playerLevel = 0.1f;
+    public static int weaponIncrease;
     
     private int checkAmount = 1;
     
@@ -63,6 +64,7 @@ public class SaveScript : MonoBehaviour
             strengthAmount = playerLevel;
             manaPowerAmount = playerLevel;
             staminaPowerAmount = playerLevel;
+            weaponIncrease = System.Convert.ToInt32(strengthAmount * 90);
         }
     }
 }
