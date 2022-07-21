@@ -16,6 +16,9 @@ public class ParticleMover : MonoBehaviour
     public float manaCost = 0.05f;
     public bool invisibility = false;
     
+    public int damageAmount = 30;
+    public GameObject lastObj;
+    
     private GameObject targetSave;
     private GameObject playerObj;
 
@@ -71,5 +74,14 @@ public class ParticleMover : MonoBehaviour
 
         SaveScript.manaAmount -= manaCost * Time.deltaTime;
         Destroy(obj, lifetime);
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy") && other.transform.gameObject != lastObj)
+        {
+            other.transform.gameObject.GetComponent<EnemyMove>().enemyHealth -= damageAmount;
+            lastObj = other.transform.gameObject;
+        }
     }
 }
