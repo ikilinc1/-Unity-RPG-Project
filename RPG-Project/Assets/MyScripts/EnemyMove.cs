@@ -155,6 +155,7 @@ public class EnemyMove : MonoBehaviour
         yield return new WaitForSeconds(1);
         Instantiate(coins, transform.position, transform.rotation);
         Destroy(gameObject, 0.2f);
+        SaveScript.killAmount++;
     }
 
 

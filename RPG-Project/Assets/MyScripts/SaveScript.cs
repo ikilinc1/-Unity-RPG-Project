@@ -21,6 +21,9 @@ public class SaveScript : MonoBehaviour
     public static bool carryingWeapon = false;
     public static int armor = 0;
     public static bool changeArmor = false;
+    public static float playerLevel = 0.1f;
+    
+    private int checkAmount = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,7 @@ public class SaveScript : MonoBehaviour
     {
         if (manaAmount < 1f)
         {
-            manaAmount += 0.04f * Time.deltaTime;
+            manaAmount += (manaPowerAmount/10 +  0.04f) * Time.deltaTime;
         }
         if (manaAmount <= 0)
         {
@@ -46,11 +49,20 @@ public class SaveScript : MonoBehaviour
         
         if (staminaAmount < 1f)
         {
-            staminaAmount += 0.04f * Time.deltaTime;
+            staminaAmount += (staminaPowerAmount/10 + 0.04f) * Time.deltaTime;
         }
         if (staminaAmount <= 0)
         {
             staminaAmount = 0;
+        }
+
+        if (killAmount == checkAmount)
+        {
+            playerLevel += 0.1f;
+            checkAmount = killAmount + 2;
+            strengthAmount = playerLevel;
+            manaPowerAmount = playerLevel;
+            staminaPowerAmount = playerLevel;
         }
     }
 }
