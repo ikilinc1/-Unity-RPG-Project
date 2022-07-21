@@ -194,29 +194,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 107850, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}
   m_PrefabInstance: {fileID: 2201481858572165546}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2201481858572165541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2201481858572125408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d20921153f39c408ae60129e693702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  obj: {fileID: 6456343708422330719}
-  speed: 5
-  lifetime: 8
-  enemySeeker: 0
-  nonMoving: 0
-  followPlayer: 0
-  manaCost: 0.09
-  invisibility: 0
-  damageAmount: 30
-  lastObj: {fileID: 0}
 --- !u!54 &4557099234074969411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244,8 +221,31 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17750008, y: 0.1775, z: 3.3025014}
-  m_Center: {x: 0.000030517578, y: 0, z: 1.5625007}
+  m_Size: {x: 33.943176, y: 5, z: 34.783752}
+  m_Center: {x: 0.3819275, y: 0, z: 6.454376}
+--- !u!114 &2201481858572165541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201481858572125408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d20921153f39c408ae60129e693702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  obj: {fileID: 6456343708422330719}
+  speed: 5
+  lifetime: 8
+  enemySeeker: 0
+  nonMoving: 0
+  followPlayer: 0
+  manaCost: 0.09
+  invisibility: 0
+  damageAmount: 100
+  lastObj: {fileID: 0}
 --- !u!4 &2201481858572593608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 428130, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}

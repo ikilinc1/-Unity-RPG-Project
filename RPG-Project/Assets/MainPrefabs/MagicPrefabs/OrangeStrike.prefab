@@ -299,29 +299,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 176350, guid: e2bdfc5c063801e49b640c7babddaf89, type: 3}
   m_PrefabInstance: {fileID: 2927071349053461440}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2927071349053461469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2927071349053367070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d20921153f39c408ae60129e693702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  obj: {fileID: 8220447640230376670}
-  speed: 5
-  lifetime: 4
-  enemySeeker: 0
-  nonMoving: 1
-  followPlayer: 0
-  manaCost: 0.05
-  invisibility: 0
-  damageAmount: 30
-  lastObj: {fileID: 0}
 --- !u!54 &7413077960794225167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -349,5 +326,28 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.000020000001, y: 0.00002, z: 0.000020000001}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.000030517578, y: 0, z: -0.000030517578}
+--- !u!114 &2927071349053461469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927071349053367070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d20921153f39c408ae60129e693702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  obj: {fileID: 8220447640230376670}
+  speed: 5
+  lifetime: 4
+  enemySeeker: 0
+  nonMoving: 1
+  followPlayer: 0
+  manaCost: 0.05
+  invisibility: 0
+  damageAmount: 30
+  lastObj: {fileID: 0}

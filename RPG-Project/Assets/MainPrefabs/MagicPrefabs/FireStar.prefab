@@ -19406,7 +19406,7 @@ MonoBehaviour:
   speed: 5
   rotator: 0
   particleTarget: 1
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!65 &633566219718962325
 BoxCollider:
@@ -29152,7 +29152,7 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.04
   invisibility: 0
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!54 &7355149186033252536
 Rigidbody:
@@ -29284,7 +29284,7 @@ MonoBehaviour:
   speed: 5
   rotator: 0
   particleTarget: 1
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!65 &1525363005991862583
 BoxCollider:
@@ -34240,7 +34240,7 @@ MonoBehaviour:
   speed: 5
   rotator: 0
   particleTarget: 1
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!65 &5154779678290666425
 BoxCollider:
@@ -34329,7 +34329,7 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.04
   invisibility: 0
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!54 &2709752160569932244
 Rigidbody:
@@ -39242,7 +39242,7 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.04
   invisibility: 0
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!54 &1259415650702712251
 Rigidbody:
@@ -44207,7 +44207,7 @@ MonoBehaviour:
   speed: 5
   rotator: 0
   particleTarget: 1
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!65 &3414034093814962761
 BoxCollider:
@@ -49120,7 +49120,7 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.04
   invisibility: 0
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!54 &7243071485211887629
 Rigidbody:
@@ -58909,7 +58909,7 @@ MonoBehaviour:
   speed: 5
   rotator: 0
   particleTarget: 1
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!65 &920664993605953630
 BoxCollider:
@@ -73572,7 +73572,7 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.04
   invisibility: 0
-  damageAmount: 30
+  damageAmount: 60
   lastObj: {fileID: 0}
 --- !u!54 &7036889496329692300
 Rigidbody:
