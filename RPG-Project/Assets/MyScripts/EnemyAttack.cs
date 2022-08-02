@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float damageAmount = 0.1f;
+    public float damageAmount = 0.006f;
     private bool canAttack = true;
     private WaitForSeconds delayTime = new WaitForSeconds(1);
 
@@ -16,7 +16,7 @@ public class EnemyAttack : MonoBehaviour
             if (canAttack && !SaveScript.invulnerable)
             {
                 canAttack = false;
-                SaveScript.playerHealth -= damageAmount;
+                SaveScript.playerHealth -= damageAmount - SaveScript.armorValue;
                 StartCoroutine(ResetDamage());
             }
         }
