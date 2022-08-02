@@ -46,7 +46,7 @@ public class ParticleMover : MonoBehaviour
 
         if (strength)
         {
-            SaveScript.strengthIncrease = 1;
+            SaveScript.strengthIncrease = 40;
         }
     }
 

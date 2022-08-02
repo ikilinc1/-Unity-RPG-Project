@@ -91,9 +91,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6456343708422330704}
     m_Modifications:
+    - target: {fileID: 103704, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 107850, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}
       propertyPath: m_Name
       value: pf_vfx-inf_psys_demo_loop_hurricane
+      objectReference: {fileID: 0}
+    - target: {fileID: 107850, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 428130, guid: 10eec583e8e6e6149b51b3a3780ab1dc, type: 3}
       propertyPath: m_RootOrder
@@ -244,6 +252,9 @@ MonoBehaviour:
   followPlayer: 0
   manaCost: 0.09
   invisibility: 0
+  invulnerability: 0
+  healing: 0
+  strength: 0
   damageAmount: 100
   lastObj: {fileID: 0}
 --- !u!4 &2201481858572593608 stripped
