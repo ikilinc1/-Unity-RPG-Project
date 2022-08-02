@@ -12,6 +12,7 @@ public class SaveScript : MonoBehaviour
     public static float manaAmount = 1f;
     public static float staminaAmount = 1f;
     public static bool invisible = false;
+    public static bool invulnerable = false;
     public static float strengthAmount = 0.1f;
     public static float manaPowerAmount = 0.1f;
     public static float staminaPowerAmount = 0.1f;
@@ -24,6 +25,7 @@ public class SaveScript : MonoBehaviour
     public static bool changeArmor = false;
     public static float playerLevel = 0.1f;
     public static int weaponIncrease;
+    public static int strengthIncrease = 0;
     
     private int checkAmount = 1;
     
@@ -47,6 +49,8 @@ public class SaveScript : MonoBehaviour
         if (manaAmount < 0.03f)
         {
             invisible = false;
+            invulnerable = false;
+            strengthIncrease = 0;
         }
         
         if (staminaAmount < 1f)

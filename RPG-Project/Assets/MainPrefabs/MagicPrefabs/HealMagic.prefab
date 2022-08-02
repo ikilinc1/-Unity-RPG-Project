@@ -178,6 +178,11 @@ MonoBehaviour:
   nonMoving: 0
   followPlayer: 1
   manaCost: 0.04
+  invisibility: 0
+  invulnerability: 0
+  healing: 1
+  damageAmount: 30
+  lastObj: {fileID: 0}
 --- !u!4 &1229537749314283470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: c315731710b634ac1907e6aceca06447, type: 3}

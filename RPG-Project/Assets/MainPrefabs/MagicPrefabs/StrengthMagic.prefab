@@ -4763,6 +4763,12 @@ MonoBehaviour:
   nonMoving: 0
   followPlayer: 1
   manaCost: 0.1
+  invisibility: 0
+  invulnerability: 0
+  healing: 0
+  strength: 1
+  damageAmount: 30
+  lastObj: {fileID: 0}
 --- !u!1 &2610006768531525518
 GameObject:
   m_ObjectHideFlags: 0

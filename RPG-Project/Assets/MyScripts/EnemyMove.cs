@@ -122,8 +122,11 @@ public class EnemyMove : MonoBehaviour
             }
             else
             {
-                nav.isStopped = false;
-                nav.destination = player.transform.position;
+                if (!SaveScript.invisible)
+                {
+                    nav.isStopped = false;
+                    nav.destination = player.transform.position;
+                }
             }
 
             if (currentHealth > enemyHealth)

@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (canAttack)
+            if (canAttack && !SaveScript.invulnerable)
             {
                 canAttack = false;
                 SaveScript.playerHealth -= damageAmount;
