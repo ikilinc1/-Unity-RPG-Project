@@ -73,6 +73,7 @@ public class InventoryItems : MonoBehaviour
     public GameObject[] magicParticles;
     public Image manaBar;
     public Image staminaBar;
+    public Image healthBar;
 
     private GameObject playerObj;
     private Animator playerAnim;
@@ -121,7 +122,8 @@ public class InventoryItems : MonoBehaviour
         {
             playerInfo = playerAnim.GetCurrentAnimatorStateInfo(1);
         }
-        
+
+        healthBar.fillAmount = SaveScript.playerHealth;
         
         if (iconUpdate)
         {

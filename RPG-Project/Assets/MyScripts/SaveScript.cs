@@ -15,6 +15,7 @@ public class SaveScript : MonoBehaviour
     public static float strengthAmount = 0.1f;
     public static float manaPowerAmount = 0.1f;
     public static float staminaPowerAmount = 0.1f;
+    public static float playerHealth = 1.0f;
     public static int killAmount = 0;
     public static int weaponChoice = 0;
     public static bool weaponChange = false;
