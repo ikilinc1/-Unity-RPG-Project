@@ -838,7 +838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &417619305136586088
 Transform:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   runRange: 12
   thisEnemy: {fileID: 417619305136742728}
   enemyHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1338056565}
   mainCam: {fileID: 0}
   coins: {fileID: 4463243451762186810, guid: 54c3c71a404026b48b5531710c26f641, type: 3}
 --- !u!65 &7299345242846404076

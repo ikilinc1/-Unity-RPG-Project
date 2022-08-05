@@ -33,7 +33,7 @@ public class EnemyMove : MonoBehaviour
     private float fillHealth;
     public GameObject mainCam;
 
-    private float rotateSpeed = 40.0f;
+    public float rotateSpeed = 40.0f;
 
     public GameObject coins;
     
@@ -98,7 +98,7 @@ public class EnemyMove : MonoBehaviour
             if (distance < attackRange || distance > runRange)
             {
                 nav.isStopped = true;
-                if (distance < attackRange && enemyInfo.IsTag("nonAttack"))
+                if (distance < attackRange && enemyInfo.IsTag("nonAttack") && !anim.IsInTransition(0))
                 {
                     if (!isAttacking)
                     {
@@ -120,7 +120,7 @@ public class EnemyMove : MonoBehaviour
                     }
                 }
             }
-            else
+            else if (distance > attackRange && enemyInfo.IsTag("nonAttack") && !anim.IsInTransition(0))
             {
                 if (!SaveScript.invisible)
                 {

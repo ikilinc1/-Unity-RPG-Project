@@ -1638,8 +1638,9 @@ MonoBehaviour:
   runRange: 12
   thisEnemy: {fileID: 8601283337847723331}
   enemyHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1912132434}
   mainCam: {fileID: 0}
+  rotateSpeed: 100
   coins: {fileID: 4463243451762186810, guid: 54c3c71a404026b48b5531710c26f641, type: 3}
 --- !u!65 &1085527279086158574
 BoxCollider:
