@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5495714762294366346
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ Animator:
   m_GameObject: {fileID: 5495714762294102134}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d021512d6de402148a36d287d6cde611, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c204c6c87cddc74fb57ef3e0f75585a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   enemyHealth: 100
   healthBar: {fileID: 886642925}
   mainCam: {fileID: 0}
+  rotateSpeed: 40
   coins: {fileID: 4463243451762186810, guid: 54c3c71a404026b48b5531710c26f641, type: 3}
 --- !u!65 &4654632693948406104
 BoxCollider:
