@@ -29,26 +29,31 @@ public class AudioManager : MonoBehaviour
             if (musicState == 1)
             {
                 audioPlayer.clip = mainLoop;
+                audioPlayer.volume = 0.6f;
                 audioPlayer.Play();
             }
             if (musicState == 2)
             {
                 audioPlayer.clip = tavernLoop;
+                audioPlayer.volume = 0.3f;
                 audioPlayer.Play();
             }
             if (musicState == 3)
             {
                 audioPlayer.clip = battleLoop;
+                audioPlayer.volume = 0.3f;
                 audioPlayer.Play();
             }
             if (musicState == 4)
             {
                 audioPlayer.clip = blacksmithLoop;
+                audioPlayer.volume = 0.3f;
                 audioPlayer.Play();
             }
             if (musicState == 5)
             {
                 audioPlayer.clip = wizardLoop;
+                audioPlayer.volume = 0.3f;
                 audioPlayer.Play();
             }
         }
