@@ -47,6 +47,10 @@ public class PlayerMove : MonoBehaviour
     private GameObject trailObj;
     private WaitForSeconds trailTimeOff = new WaitForSeconds(0.1f);
     public float[] staminaCost;
+
+    private float currentHealth = 1.0f;
+    public GameObject hitEffect;
+    private WaitForSeconds hitOff = new WaitForSeconds(0.5f);
     
     // Start is called before the first frame update
     void Start()
@@ -63,6 +67,7 @@ public class PlayerMove : MonoBehaviour
         {
             weapons[i].SetActive(false);
         }
+        hitEffect.SetActive(false);
     }
 
     // Update is called once per frame
@@ -229,6 +234,13 @@ public class PlayerMove : MonoBehaviour
             SceneManager.LoadScene(0);
             SaveScript.playerHealth = 1.0f;
         }
+
+        if (currentHealth > SaveScript.playerHealth)
+        {
+            hitEffect.SetActive(true);
+            currentHealth = SaveScript.playerHealth;
+            StartCoroutine(hitEffectOff());
+        }
     }
 
     public void PlayWeaponSound()
@@ -257,5 +269,11 @@ public class PlayerMove : MonoBehaviour
         yield return trailTimeOff;
         trailObj = GameObject.Find("Trail");
         trailObj.GetComponent<Renderer>().enabled = false;
+    }
+    
+    IEnumerator hitEffectOff()
+    {
+        yield return hitOff;
+        hitEffect.SetActive(false);
     }
 }
