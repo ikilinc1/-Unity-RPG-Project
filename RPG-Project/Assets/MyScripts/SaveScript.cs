@@ -29,7 +29,7 @@ public class SaveScript : MonoBehaviour
     public static float armorValue = 0f;
     public static int enemiesOnScreen;
     
-    private int checkAmount = 1;
+    private int checkAmount = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -67,7 +67,7 @@ public class SaveScript : MonoBehaviour
         if (killAmount == checkAmount)
         {
             playerLevel += 0.1f;
-            checkAmount = killAmount + 2;
+            checkAmount = killAmount + 10;
             strengthAmount = playerLevel;
             manaPowerAmount = playerLevel;
             staminaPowerAmount = playerLevel;
