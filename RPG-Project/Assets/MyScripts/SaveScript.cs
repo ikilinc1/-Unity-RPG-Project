@@ -27,6 +27,7 @@ public class SaveScript : MonoBehaviour
     public static int weaponIncrease;
     public static int strengthIncrease = 0;
     public static float armorValue = 0f;
+    public static int enemiesOnScreen;
     
     private int checkAmount = 1;
     

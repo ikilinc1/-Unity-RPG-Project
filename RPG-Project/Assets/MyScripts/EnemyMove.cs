@@ -51,6 +51,10 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mainCam == null)
+        {
+            mainCam = GameObject.Find("Main Camera");
+        }
         healthBar.transform.LookAt(mainCam.transform.position);
         if (isAlive)
         {
@@ -145,6 +149,7 @@ public class EnemyMove : MonoBehaviour
             isAlive = false;
             nav.isStopped = true;
             anim.SetTrigger("death");
+            SaveScript.enemiesOnScreen--;
             thisEnemy.GetComponent<Outline>().enabled = false;
             outlineOn = false;
             nav.avoidancePriority = 1;
