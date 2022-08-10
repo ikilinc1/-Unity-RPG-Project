@@ -19,7 +19,7 @@ public class EnemyMove : MonoBehaviour
     private float distance;
     private bool isAttacking = false;
     public float attackRange = 2.0f;
-    public float runRange = 12.0f;
+    private float runRange = 50.0f;
     
     public GameObject thisEnemy;
     private bool outlineOn = false;
@@ -102,6 +102,11 @@ public class EnemyMove : MonoBehaviour
             if (distance < attackRange || distance > runRange)
             {
                 nav.isStopped = true;
+                if (distance > runRange)
+                {
+                    SaveScript.enemiesOnScreen--;
+                    Destroy(gameObject);
+                }
                 if (distance < attackRange && enemyInfo.IsTag("nonAttack") && !anim.IsInTransition(0))
                 {
                     if (!isAttacking)
