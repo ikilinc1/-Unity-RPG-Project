@@ -33,6 +33,9 @@ public class DragonScript : MonoBehaviour
     public float rotateSpeed = 40.0f;
 
     public GameObject coins;
+
+    public GameObject fireball;
+    public Transform fireballSpawnPoint;
     
     // Start is called before the first frame update
     void Start()
@@ -152,6 +155,11 @@ public class DragonScript : MonoBehaviour
     }
 
 
+    public void ShootFireball()
+    {
+        Instantiate(fireball, fireballSpawnPoint.position, fireballSpawnPoint.rotation);
+    }
+    
     IEnumerator IsDead()
     {
         yield return new WaitForSeconds(1);
