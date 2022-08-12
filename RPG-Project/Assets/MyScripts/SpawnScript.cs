@@ -8,6 +8,7 @@ public class SpawnScript : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawnPoints;
     public GameObject myCamera;
+    public bool reSpawner = true;
 
     private bool canSpawn = true;
 
@@ -17,7 +18,10 @@ public class SpawnScript : MonoBehaviour
         {
             if (canSpawn)
             {
-                canSpawn = false;
+                if (reSpawner)
+                {
+                    canSpawn = false;
+                }
                 for (int i = 0; i < enemies.Length; i++)
                 {
                     Instantiate(enemies[i], spawnPoints[i].position, spawnPoints[i].rotation);
