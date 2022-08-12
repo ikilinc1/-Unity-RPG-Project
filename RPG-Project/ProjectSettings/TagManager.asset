@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - Crate
   - spider
+  - dragon
   layers:
   - Default
   - TransparentFX
