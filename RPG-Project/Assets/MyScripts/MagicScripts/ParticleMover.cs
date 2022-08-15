@@ -101,5 +101,15 @@ public class ParticleMover : MonoBehaviour
             other.transform.gameObject.GetComponent<EnemyMove>().enemyHealth -= damageAmount;
             lastObj = other.transform.gameObject;
         }
+        if (other.CompareTag("spider") && other.transform.gameObject != lastObj)
+        {
+            other.transform.gameObject.GetComponent<EnemyMove>().enemyHealth -= (damageAmount / 4);
+            lastObj = other.transform.gameObject;
+        }
+        if (other.CompareTag("dragon") && other.transform.gameObject != lastObj)
+        {
+            other.transform.gameObject.GetComponent<DragonScript>().enemyHealth -= (damageAmount / 8);
+            lastObj = other.transform.gameObject;
+        }
     }
 }

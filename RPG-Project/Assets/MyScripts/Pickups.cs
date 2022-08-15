@@ -13,6 +13,7 @@ public class Pickups : MonoBehaviour
     public bool redFlower = false;
     public bool key = false;
     public bool coins = false;
+    public bool isDragon = false;
 
     private void Start()
     {
@@ -84,8 +85,14 @@ public class Pickups : MonoBehaviour
             }
             else if (coins)
             {
-
-                InventoryItems.gold += UnityEngine.Random.Range(5, 250);
+                if (isDragon)
+                {
+                    InventoryItems.gold += 1000;
+                }
+                else
+                {
+                    InventoryItems.gold += UnityEngine.Random.Range(5, 250);
+                }
                 Destroy(gameObject);
             }
             else

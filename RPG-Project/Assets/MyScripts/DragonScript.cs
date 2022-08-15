@@ -36,6 +36,9 @@ public class DragonScript : MonoBehaviour
 
     public GameObject fireball;
     public Transform fireballSpawnPoint;
+
+    private bool canBreathFire = true;
+    private WaitForSeconds firePause = new WaitForSeconds(2);
     
     // Start is called before the first frame update
     void Start()
@@ -86,7 +89,7 @@ public class DragonScript : MonoBehaviour
 
             distance = Vector3.Distance(transform.position, player.transform.position);
 
-            if (distance < closeAttackRange || distance > runRange)
+            if (distance < farAttackRange || distance > runRange)
             {
                 nav.isStopped = true;
                 if (distance > runRange)
@@ -109,15 +112,17 @@ public class DragonScript : MonoBehaviour
                 }
                 if (distance < farAttackRange && distance > closeAttackRange && enemyInfo.IsTag("nonAttack") && !anim.IsInTransition(0))
                 {
-                    if (!isAttacking)
+                    if (!isAttacking && canBreathFire)
                     {
                         isAttacking = true;
+                        canBreathFire = false;
                         anim.SetTrigger("fireAttack");
                         
                         // Look at player smoothly
                         Vector3 pos = (player.transform.position - transform.position).normalized;
                         Quaternion posRotation = Quaternion.LookRotation(new Vector3(pos.x, 0, pos.z));
                         transform.rotation = Quaternion.Slerp(transform.rotation, posRotation, Time.deltaTime * rotateSpeed);
+                        StartCoroutine(ResetFire());
                     }
                 }
 
@@ -169,5 +174,10 @@ public class DragonScript : MonoBehaviour
         SaveScript.killAmount++;
     }
 
-
+    IEnumerator ResetFire()
+    {
+        yield return firePause;
+        canBreathFire = true;
+    }
+    
 }

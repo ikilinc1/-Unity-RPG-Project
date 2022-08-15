@@ -894,7 +894,7 @@ MonoBehaviour:
   healthBar: {fileID: 5116734052637179097}
   mainCam: {fileID: 0}
   rotateSpeed: 40
-  coins: {fileID: 4463243451762186810, guid: 54c3c71a404026b48b5531710c26f641, type: 3}
+  coins: {fileID: 4463243451762186810, guid: 9da866c79fd9ccc4e85d89bcb1dc8e92, type: 3}
   fireball: {fileID: 6648348098537726563, guid: 256e4a4b3b2dba44a9b1c4f6519ac380, type: 3}
   fireballSpawnPoint: {fileID: 3276463477948232640}
 --- !u!82 &4696091072873129883
