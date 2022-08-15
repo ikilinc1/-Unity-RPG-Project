@@ -157,6 +157,7 @@ public class DragonScript : MonoBehaviour
 
     public void ShootFireball()
     {
+        fireballSpawnPoint.transform.LookAt(player.transform.position);
         Instantiate(fireball, fireballSpawnPoint.position, fireballSpawnPoint.rotation);
     }
     
