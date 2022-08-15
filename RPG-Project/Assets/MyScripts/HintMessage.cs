@@ -61,6 +61,22 @@ public class HintMessage : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
                         inventoryObject.GetComponent<InventoryItems>().setTwo = true;
                     }
                 }
+
+                if (objectType == 14)
+                {
+                    SaveScript.playerHealth += 0.05f;
+                    InventoryItems.breads--;
+                }
+                if (objectType == 15)
+                {
+                    SaveScript.playerHealth += 0.08f;
+                    InventoryItems.cheese--;
+                }
+                if (objectType == 16)
+                {
+                    SaveScript.playerHealth += 0.1f;
+                    InventoryItems.meat--;
+                }
             }
         }
         if (Input.GetMouseButtonUp(0))

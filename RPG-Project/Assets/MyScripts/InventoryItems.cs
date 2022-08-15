@@ -214,6 +214,19 @@ public class InventoryItems : MonoBehaviour
                 changeWeight = false;
             }
         }
+
+        if (breads == 0)
+        {
+            RemoveIcon(14);
+        }
+        if (cheese == 0)
+        {
+            RemoveIcon(15);
+        }
+        if (meat == 0)
+        {
+            RemoveIcon(16);
+        }
     }
 
     public void CheckStatics()
