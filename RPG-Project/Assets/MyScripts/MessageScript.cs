@@ -43,7 +43,10 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         shopOwnerMessage.text = shopMessage;
         if (inventoryObj)
         {
-            inventoryObj.GetComponent<InventoryItems>().UpdateMessages(shopMessage);
+            if (shopMessage != "Not much going on around here.")
+            {
+                inventoryObj.GetComponent<InventoryItems>().UpdateMessages(shopMessage);
+            }
         }
     }
     
