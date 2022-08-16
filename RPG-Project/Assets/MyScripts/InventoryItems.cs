@@ -83,6 +83,9 @@ public class InventoryItems : MonoBehaviour
 
     public bool[] weapons;
 
+    public Text[] messages;
+    private int maxFour;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +100,8 @@ public class InventoryItems : MonoBehaviour
         //playerObj = GameObject.FindGameObjectWithTag("Player");
         //playerAnim = playerObj.GetComponent<Animator>();
         StartCoroutine(FindPlayer());
+        maxFour = messages.Length;
+        
         //TEMP
         redMushrooms = 0; 
         purpleMushrooms = 0; 
@@ -313,6 +318,20 @@ public class InventoryItems : MonoBehaviour
         theCanvas.GetComponent<CreatePotion>().thisValue = 0;
         theCanvas.GetComponent<CreatePotion>().value = 0;
         potionBook.SetActive(false);
+    }
+
+    public void UpdateMessages(string message)
+    {
+        for (int i = 0; i < maxFour; i++)
+        {
+            if (messages[i].text == "blank")
+            {
+                maxFour = i;
+                messages[i].text = message;
+            }
+        }
+
+        maxFour = messages.Length;
     }
     
     IEnumerator Reset()

@@ -16,6 +16,9 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     
     [HideInInspector]
     public int shopNumber = 0;
+
+    public string shopMessage;
+    public GameObject inventoryObj;
     
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -37,7 +40,11 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void Message1()
     {
-        shopOwnerMessage.text = "Not much going on around here at this time around.";
+        shopOwnerMessage.text = shopMessage;
+        if (inventoryObj)
+        {
+            inventoryObj.GetComponent<InventoryItems>().UpdateMessages(shopMessage);
+        }
     }
     
     public void Message2()
@@ -56,6 +63,7 @@ public class MessageScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             if (shopUI[shopNumber])
             {
+                shopOwnerMessage.text = "Hello " + SaveScript.pname + ", How can i help you?";
                 shopUI[shopNumber].SetActive(false);
             }
         }
