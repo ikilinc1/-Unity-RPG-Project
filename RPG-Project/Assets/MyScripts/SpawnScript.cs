@@ -11,20 +11,20 @@ public class SpawnScript : MonoBehaviour
     public bool reSpawner = true;
 
     private bool canSpawn = true;
+    private bool enemyTrigger = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            if (canSpawn)
+            if(canSpawn)
             {
-                if (reSpawner)
+                enemyTrigger = false;
+                canSpawn = false;
+                for(int i = 0; i < enemies.Length; i++)
                 {
-                    canSpawn = false;
-                }
-                for (int i = 0; i < enemies.Length; i++)
-                {
-                    Instantiate(enemies[i], spawnPoints[i].position, spawnPoints[i].rotation);
+                    Instantiate(enemies[i], spawnPoints[i].position,
+                        spawnPoints[i].rotation);
                     SaveScript.enemiesOnScreen++;
                     myCamera.GetComponent<AudioManager>().musicState = 3;
                     myCamera.GetComponent<AudioManager>().canPlay = true;
@@ -33,14 +33,20 @@ public class SpawnScript : MonoBehaviour
         }
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
-        if (SaveScript.enemiesOnScreen <= 0)
+        if(SaveScript.enemiesOnScreen <= 0)
         {
-            if (!canSpawn)
+            if (!canSpawn && !enemyTrigger)
             {
-                canSpawn = true;
+                enemyTrigger = true;
+                if (reSpawner )
+                {
+                    canSpawn = true;
+                }
                 myCamera.GetComponent<AudioManager>().musicState = 1;
                 myCamera.GetComponent<AudioManager>().canPlay = true;
             }
