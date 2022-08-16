@@ -6,6 +6,8 @@ public class TalkScript : MonoBehaviour
 {
     public GameObject messageBox;
     public int tavernNumber = 0;
+    public string answer;
+    public GameObject question;
 
     private void OnTriggerStay(Collider other)
     {
@@ -28,6 +30,7 @@ public class TalkScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             messageBox.GetComponentInChildren<MessageScript>().shopNumber = tavernNumber;
+            question.GetComponent<MessageScript>().shopMessage = answer;
         }
     }
 }
