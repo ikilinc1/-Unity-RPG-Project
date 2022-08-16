@@ -15,6 +15,7 @@ public class InventoryItems : MonoBehaviour
 
     public GameObject inventoryScreen;
     public GameObject statsScreen;
+    public GameObject deedsScreen;
     public GameObject characterDisplay;
 
     private AudioSource audioPlayer;
@@ -93,6 +94,7 @@ public class InventoryItems : MonoBehaviour
         openBook.SetActive(false);
         closedBook.SetActive(true);
         potionBook.SetActive(false);
+        deedsScreen.SetActive(false);
         max = emptySlots.Length;
         maxTwo = items.Length;
         maxThree = emptySlots.Length;
@@ -295,6 +297,7 @@ public class InventoryItems : MonoBehaviour
     public void OpenInventoryScreen()
     {
         statsScreen.SetActive(false);
+        deedsScreen.SetActive(false);
         characterDisplay.SetActive(false);
         inventoryScreen.SetActive(true);
     }
@@ -302,10 +305,20 @@ public class InventoryItems : MonoBehaviour
     public void OpenStatsScreen()
     {
         inventoryScreen.SetActive(false);
+        deedsScreen.SetActive(false);
         statsScreen.SetActive(true);
         characterDisplay.SetActive(true);
         statsScreen.GetComponent<StatsUpdate>().updateWeapons = true;
         characterDisplay.GetComponent<PlayerDisplay>().ChangeDisplayArmor();
+    }
+    
+    public void OpenDeedsScreen()
+    {
+        inventoryScreen.SetActive(false);
+        statsScreen.SetActive(false);
+        deedsScreen.SetActive(true);
+        characterDisplay.SetActive(false);
+        deedsScreen.GetComponent<DeedsScript>().canUpdate = true;
     }
 
     public void OpenPotionBook()
