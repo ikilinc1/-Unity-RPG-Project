@@ -10,6 +10,8 @@ TagManager:
   - Crate
   - spider
   - dragon
+  - minimapItem
+  - compass
   layers:
   - Default
   - TransparentFX
