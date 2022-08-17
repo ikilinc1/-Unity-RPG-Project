@@ -17,6 +17,9 @@ public class InventoryItems : MonoBehaviour
     public GameObject statsScreen;
     public GameObject deedsScreen;
     public GameObject characterDisplay;
+    public GameObject mapScreen;
+
+    public GameObject mapCam;
 
     private AudioSource audioPlayer;
     public AudioClip bookOpenSound;
@@ -298,6 +301,8 @@ public class InventoryItems : MonoBehaviour
         audioPlayer.clip = bookOpenSound;
         audioPlayer.Play();
         characterDisplay.SetActive(false);
+        mapScreen.SetActive(false);
+        mapCam.SetActive(false);
         minimapView.SetActive(true);
         minimapCompass.SetActive(true);
         Time.timeScale = 1;
@@ -308,6 +313,8 @@ public class InventoryItems : MonoBehaviour
         statsScreen.SetActive(false);
         deedsScreen.SetActive(false);
         characterDisplay.SetActive(false);
+        mapScreen.SetActive(false);
+        mapCam.SetActive(false);
         inventoryScreen.SetActive(true);
     }
     
@@ -315,6 +322,8 @@ public class InventoryItems : MonoBehaviour
     {
         inventoryScreen.SetActive(false);
         deedsScreen.SetActive(false);
+        mapScreen.SetActive(false);
+        mapCam.SetActive(false);
         statsScreen.SetActive(true);
         characterDisplay.SetActive(true);
         statsScreen.GetComponent<StatsUpdate>().updateWeapons = true;
@@ -325,11 +334,23 @@ public class InventoryItems : MonoBehaviour
     {
         inventoryScreen.SetActive(false);
         statsScreen.SetActive(false);
+        mapScreen.SetActive(false);
+        mapCam.SetActive(false);
         deedsScreen.SetActive(true);
         characterDisplay.SetActive(false);
         deedsScreen.GetComponent<DeedsScript>().canUpdate = true;
     }
 
+    public void OpenMapScreen()
+    {
+        inventoryScreen.SetActive(false);
+        statsScreen.SetActive(false);
+        deedsScreen.SetActive(false);
+        mapScreen.SetActive(true);
+        mapCam.SetActive(true);
+        characterDisplay.SetActive(false);
+    }
+    
     public void OpenPotionBook()
     {
         potionBook.SetActive(true);
