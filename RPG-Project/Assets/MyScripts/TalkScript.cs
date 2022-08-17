@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +9,25 @@ public class TalkScript : MonoBehaviour
     public int tavernNumber = 0;
     public string answer;
     public GameObject question;
+    
 
     private bool haveRead = false;
+    private GameObject minimapView;
+    private GameObject minimapCompass;
+
+    private void Start()
+    {
+        minimapView = GameObject.FindGameObjectWithTag("minimapItem");
+        minimapCompass = GameObject.FindGameObjectWithTag("compass");
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             messageBox.SetActive(true);
+            minimapView.SetActive(false);
+            minimapCompass.SetActive(false);
         }
     }
     
@@ -24,6 +36,8 @@ public class TalkScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             messageBox.SetActive(false);
+            minimapView.SetActive(true);
+            minimapCompass.SetActive(true);
         }
     }
     

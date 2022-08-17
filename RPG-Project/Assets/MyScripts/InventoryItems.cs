@@ -81,6 +81,8 @@ public class InventoryItems : MonoBehaviour
     private float weightAmount = 1.0f;
     private bool changeWeight = false;
     private AnimatorStateInfo playerInfo;
+    private GameObject minimapView;
+    private GameObject minimapCompass;
 
     public bool[] weapons;
 
@@ -103,6 +105,9 @@ public class InventoryItems : MonoBehaviour
         //playerAnim = playerObj.GetComponent<Animator>();
         StartCoroutine(FindPlayer());
         maxFour = messages.Length;
+        
+        minimapView = GameObject.FindGameObjectWithTag("minimapItem");
+        minimapCompass = GameObject.FindGameObjectWithTag("compass");
         
         //TEMP
         redMushrooms = 0; 
@@ -280,6 +285,8 @@ public class InventoryItems : MonoBehaviour
         audioPlayer.Play();
         SaveScript.theTarget = null;
         OpenInventoryScreen();
+        minimapView.SetActive(false);
+        minimapCompass.SetActive(false);
         Time.timeScale = 0;
     }
     
@@ -291,6 +298,8 @@ public class InventoryItems : MonoBehaviour
         audioPlayer.clip = bookOpenSound;
         audioPlayer.Play();
         characterDisplay.SetActive(false);
+        minimapView.SetActive(true);
+        minimapCompass.SetActive(true);
         Time.timeScale = 1;
     }
 
