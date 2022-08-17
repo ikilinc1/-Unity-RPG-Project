@@ -50,7 +50,7 @@ public class InventoryItems : MonoBehaviour
     public static int meat = 0;
     
     public static int newIcon = 0;
-    public static int gold = 30000;
+    public static int gold = 200;
     public static bool iconUpdate = false;
     private int max;
 
