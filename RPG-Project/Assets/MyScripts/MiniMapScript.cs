@@ -17,9 +17,12 @@ public class MiniMapScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Vector3 pos = player.transform.position;
-        pos.y = transform.position.y;
-        transform.position = pos;
+        if (player)
+        {
+            Vector3 pos = player.transform.position;
+            pos.y = transform.position.y;
+            transform.position = pos;
+        }
     }
 
     IEnumerator FindPlayer()
