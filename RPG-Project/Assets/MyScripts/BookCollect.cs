@@ -11,8 +11,8 @@ public class BookCollect : MonoBehaviour
     public bool magicBook = false;
     public bool spellsbook = false;
     
-    private bool magicCollected = false;
-    private bool spellsCollected = false;
+    public static bool magicCollected = false;
+    public static bool spellsCollected = false;
     // Start is called before the first frame update
     void Start()
     {

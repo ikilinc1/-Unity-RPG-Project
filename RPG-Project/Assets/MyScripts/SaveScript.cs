@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SaveScript : MonoBehaviour
 {
@@ -28,6 +30,48 @@ public class SaveScript : MonoBehaviour
     public static int strengthIncrease = 0;
     public static float armorValue = 0f;
     public static int enemiesOnScreen;
+
+    public static bool saving = false;
+    public static bool continueData = false;
+    private bool checkForLoad = false;
+    private GameObject inventoryObj;
+    
+    // save data
+    public int pcharS;
+    public string pnameS;
+    public float strengthAmtS;
+    public float manaPowerAmtS;
+    public float staminaPowerAmtS;
+    public int killAmtS;
+    public int weaponChoiceS;
+    public bool carryingWeaponS;
+    public int armorS;
+    public float playerLevelS;
+    public int weaponIncreaseS;
+    public float playerHealthS;
+    public int strengthIncreaseS;
+    public float armorValueS;
+    public int goldS;
+    public bool keyS;
+    public int redMushroomsS;
+    public int purpleMushroomsS;
+    public int brownMushroomsS;
+    public int blueFlowersS;
+    public int redFlowersS;
+    public int rootsS;
+    public int leafDewS;
+    public int dragonEggS;
+    public int redPotionS;
+    public int bluePotionS;
+    public int greenPotionS;
+    public int purplePotionS;
+    public int breadS;
+    public int cheeseS;
+    public int meatS;
+    public bool magicCollectedS;
+    public bool spellsCollectedS;
+    public bool[] weaponS;
+    public int[] objectTypeS;
     
     private int checkAmount = 10;
     
@@ -81,6 +125,58 @@ public class SaveScript : MonoBehaviour
         if (armor == 2)
         {
             armorValue = 0.004f;
+        }
+
+        if (saving)
+        {
+            if (inventoryObj == null)
+            {
+                inventoryObj = GameObject.Find("InventoryCanvas");
+            }
+            pcharS = pchar;
+            pnameS = pname;
+            strengthAmtS = strengthAmount;
+            manaPowerAmtS = manaPowerAmount;
+            staminaPowerAmtS = staminaPowerAmount;
+            killAmtS = killAmount;
+            weaponChoiceS = weaponChoice;
+            carryingWeaponS = carryingWeapon;
+            armorS = armor;
+            playerLevelS = playerLevel;
+            weaponIncreaseS = weaponIncrease;
+            playerHealthS = playerHealth;
+            strengthIncreaseS = strengthIncrease;
+            armorValueS = armorValue;
+            goldS = InventoryItems.gold;
+            keyS = InventoryItems.key;
+            redMushroomsS = InventoryItems.redMushrooms;
+            purpleMushroomsS = InventoryItems.purpleMushrooms;
+            brownMushroomsS = InventoryItems.brownMushrooms;
+            blueFlowersS = InventoryItems.blueFlowers;
+            redFlowersS = InventoryItems.redFlowers;
+            rootsS = InventoryItems.roots;
+            leafDewS = InventoryItems.leafDews;
+            dragonEggS = InventoryItems.pinkEggs;
+            redPotionS = InventoryItems.redPotions;
+            bluePotionS = InventoryItems.bluePotions;
+            greenPotionS = InventoryItems.greenPotions;
+            purplePotionS = InventoryItems.purplePotions;
+            breadS = InventoryItems.breads;
+            cheeseS = InventoryItems.cheese;
+            meatS = InventoryItems.meat;
+            magicCollectedS = BookCollect.magicCollected;
+            spellsCollectedS = BookCollect.spellsCollected;
+            weaponS = inventoryObj.GetComponent<InventoryItems>().weapons;
+            for (int i = 0; i < 16; i++)
+            {
+                objectTypeS[i] = inventoryObj.GetComponent<InventoryItems>().emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType;
+            }
+
+            string saveData = JsonUtility.ToJson(this);
+            string fileLocation = Application.persistentDataPath + "/save.dat";
+            StreamWriter writer = new StreamWriter(fileLocation);
+            writer.WriteLine(saveData);
+            writer.Close();
         }
     }
 }
