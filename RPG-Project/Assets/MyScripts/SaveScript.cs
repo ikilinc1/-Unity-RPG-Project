@@ -129,6 +129,7 @@ public class SaveScript : MonoBehaviour
 
         if (saving)
         {
+            saving = false;
             if (inventoryObj == null)
             {
                 inventoryObj = GameObject.Find("InventoryCanvas");
