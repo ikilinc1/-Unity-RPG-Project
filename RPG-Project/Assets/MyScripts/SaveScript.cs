@@ -206,11 +206,11 @@ public class SaveScript : MonoBehaviour
                 if (inventoryObj != null)
                 {
                     pname = pnameS;
-                    strengthAmtS = strengthAmount;
-                    manaPowerAmtS = manaPowerAmount;
-                    staminaPowerAmtS = staminaPowerAmount;
+                    strengthAmount = strengthAmtS;
+                    manaPowerAmount = manaPowerAmtS;
+                    staminaPowerAmount = staminaPowerAmtS;
                     killAmtS = killAmount;
-                    weaponChoiceS = weaponChoice;
+                    weaponChoice = weaponChoiceS;
                     carryingWeapon = carryingWeaponS;
                     armor = armorS;
                     playerLevel = playerLevelS;
@@ -237,6 +237,16 @@ public class SaveScript : MonoBehaviour
                     InventoryItems.meat = meatS;
                     BookCollect.magicCollected = magicCollectedS;
                     BookCollect.spellsCollected = spellsCollectedS;
+
+                    if (magicCollectedS)
+                    {
+                        inventoryObj.GetComponent<InventoryItems>().magicUI.SetActive(true);
+                    }
+                    
+                    if (spellsCollectedS)
+                    {
+                        inventoryObj.GetComponent<InventoryItems>().spellsUI.SetActive(true);
+                    }
                     
                     inventoryObj.GetComponent<InventoryItems>().weapons = weaponS;
                     if (carryingWeapon)

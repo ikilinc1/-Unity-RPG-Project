@@ -92,6 +92,9 @@ public class InventoryItems : MonoBehaviour
     public Text[] messages;
     private int maxFour;
 
+    public GameObject magicUI;
+    public GameObject spellsUI;
+
     // Start is called before the first frame update
     void Start()
     {
