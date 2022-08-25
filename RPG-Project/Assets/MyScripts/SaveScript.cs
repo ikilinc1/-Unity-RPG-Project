@@ -79,6 +79,19 @@ public class SaveScript : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
+
+        if (continueData)
+        {
+            string fileLocation = Application.persistentDataPath + "/save.dat";
+            StreamReader reader = new StreamReader(fileLocation);
+            string saveData = reader.ReadToEnd();
+            reader.Close();
+            JsonUtility.FromJsonOverwrite(saveData, this);
+
+            pchar = pcharS;
+            continueData = false;
+            checkForLoad = true;
+        }
     }
 
     private void Update()
@@ -178,6 +191,68 @@ public class SaveScript : MonoBehaviour
             StreamWriter writer = new StreamWriter(fileLocation);
             writer.WriteLine(saveData);
             writer.Close();
+        }
+
+        if (checkForLoad)
+        {
+            int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+            if (sceneNumber == 2)
+            {
+                if (inventoryObj == null)
+                {
+                    inventoryObj = GameObject.Find("InventoryCanvas");
+                }
+
+                if (inventoryObj != null)
+                {
+                    pname = pnameS;
+                    strengthAmtS = strengthAmount;
+                    manaPowerAmtS = manaPowerAmount;
+                    staminaPowerAmtS = staminaPowerAmount;
+                    killAmtS = killAmount;
+                    weaponChoiceS = weaponChoice;
+                    carryingWeapon = carryingWeaponS;
+                    armor = armorS;
+                    playerLevel = playerLevelS;
+                    weaponIncrease = weaponIncreaseS;
+                    playerHealth = playerHealthS;
+                    strengthIncrease = strengthIncreaseS;
+                    armorValue = armorValueS;
+                    InventoryItems.gold = goldS;
+                    InventoryItems.key = keyS;
+                    InventoryItems.redMushrooms = redMushroomsS;
+                    InventoryItems.purpleMushrooms = purpleMushroomsS;
+                    InventoryItems.brownMushrooms = brownMushroomsS;
+                    InventoryItems.blueFlowers = blueFlowersS;
+                    InventoryItems.redFlowers = redFlowersS;
+                    InventoryItems.roots = rootsS;
+                    InventoryItems.leafDews = leafDewS;
+                    InventoryItems.pinkEggs = dragonEggS;
+                    InventoryItems.redPotions = redPotionS;
+                    InventoryItems.bluePotions = bluePotionS;
+                    InventoryItems.greenPotions = greenPotionS;
+                    InventoryItems.purplePotions = purplePotionS;
+                    InventoryItems.breads = breadS;
+                    InventoryItems.cheese = cheeseS;
+                    InventoryItems.meat = meatS;
+                    BookCollect.magicCollected = magicCollectedS;
+                    BookCollect.spellsCollected = spellsCollectedS;
+                    
+                    inventoryObj.GetComponent<InventoryItems>().weapons = weaponS;
+                    if (carryingWeapon)
+                    {
+                        weaponChange = true;
+                    }
+                    for (int i = 0; i < 16; i++)
+                    {
+                        inventoryObj.GetComponent<InventoryItems>().emptySlots[i].sprite =
+                            inventoryObj.GetComponent<InventoryItems>().icons[objectTypeS[i]];
+                         inventoryObj.GetComponent<InventoryItems>().emptySlots[i].transform.gameObject.GetComponent<HintMessage>().objectType = objectTypeS[i];
+                    }
+
+                    checkForLoad = false;
+                }
+            }
         }
     }
 }
