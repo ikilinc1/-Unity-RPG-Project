@@ -34,6 +34,6 @@ public class Choose : MonoBehaviour
     {
         SaveScript.pchar = p;
         SaveScript.pname = playerName.text;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
