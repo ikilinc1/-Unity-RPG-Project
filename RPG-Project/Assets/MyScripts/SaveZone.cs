@@ -41,6 +41,7 @@ public class SaveZone : MonoBehaviour
     {
         SaveScript.saving = true;
         saveText.SetActive(true);
+        Time.timeScale = 1;
         StartCoroutine(Continue());
     }
     
@@ -53,7 +54,6 @@ public class SaveZone : MonoBehaviour
     IEnumerator Continue()
     {
         yield return new WaitForSeconds(1);
-        Time.timeScale = 1;
         saveScreen.SetActive(false);
         saveText.SetActive(false);
     }
