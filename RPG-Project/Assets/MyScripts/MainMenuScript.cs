@@ -21,6 +21,7 @@ public class MainMenuScript : MonoBehaviour
             continueButton.SetActive(false);
         }
 
+        Time.timeScale = 1;
         Cursor.visible = true;
     }
 

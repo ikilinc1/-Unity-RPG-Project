@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class DeathScreen : MonoBehaviour
 {
     public Animator anim;
+    private GameObject saveObj;
+    
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +19,10 @@ public class DeathScreen : MonoBehaviour
     IEnumerator WaitToReload()
     {
         yield return new WaitForSeconds(1.5f);
+        SaveScript.playerHealth = 1.0f;
+        SaveScript.instance = 0;
+        saveObj = GameObject.Find("SaveObject");
+        Destroy(saveObj);
         SceneManager.LoadScene(0);
     }
 }

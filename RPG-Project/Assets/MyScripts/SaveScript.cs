@@ -119,6 +119,7 @@ public class SaveScript : MonoBehaviour
             enemiesOnScreen = 0;
             BookCollect.magicCollected = false;
             BookCollect.spellsCollected = false;
+            newGame = false;
         }
         if (continueData)
         {
@@ -245,6 +246,7 @@ public class SaveScript : MonoBehaviour
 
                 if (inventoryObj != null)
                 {
+                    PlayerMove.canMove = true;
                     pname = pnameS;
                     strengthAmount = strengthAmtS;
                     manaPowerAmount = manaPowerAmtS;
