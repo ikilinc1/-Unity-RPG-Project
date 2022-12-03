@@ -1,5 +1,5 @@
 # -Unity-RPG-Project  
-  
+  Basic rpg game with crafting, inventory, fight, shop, quest system
   
 
 
