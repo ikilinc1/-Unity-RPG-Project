@@ -357,6 +357,8 @@ public class InventoryItems : MonoBehaviour
     public void OpenPotionBook()
     {
         potionBook.SetActive(true);
+        theCanvas.GetComponent<CreatePotion>().thisValue = 0;
+        theCanvas.GetComponent<CreatePotion>().value = 0;
     }
     
     public void ClosePotionBook()

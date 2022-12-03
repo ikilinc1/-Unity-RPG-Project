@@ -14,9 +14,11 @@ public class TalkScript : MonoBehaviour
     private bool haveRead = false;
     private GameObject minimapView;
     private GameObject minimapCompass;
+    private GameObject inventoryObj;
 
     private void Start()
     {
+        inventoryObj = GameObject.Find("InventoryCanvas");
         minimapView = GameObject.FindGameObjectWithTag("minimapItem");
         minimapCompass = GameObject.FindGameObjectWithTag("compass");
     }
@@ -46,22 +48,22 @@ public class TalkScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             messageBox.GetComponentInChildren<MessageScript>().shopNumber = tavernNumber;
+            for (int i = 0; i < inventoryObj.GetComponent<InventoryItems>().messages.Length; i++)
+            {
+                if (answer == inventoryObj.GetComponent<InventoryItems>().messages[i].text)
+                {
+                    haveRead = true;
+                }
+            }
             if (!haveRead)
             {
                 haveRead = false;
                 question.GetComponent<MessageScript>().shopMessage = answer;
-                StartCoroutine(FirstEntry());
             }
             else if(haveRead)
             {
                 question.GetComponent<MessageScript>().shopMessage = "Not much going on around here.";
             }
         }
-    }
-
-    IEnumerator FirstEntry()
-    {
-        yield return new WaitForSeconds(1);
-        haveRead = true;
     }
 }

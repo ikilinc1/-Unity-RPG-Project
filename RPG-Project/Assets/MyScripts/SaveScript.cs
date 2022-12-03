@@ -253,6 +253,11 @@ public class SaveScript : MonoBehaviour
                     {
                         weaponChange = true;
                     }
+
+                    if (armor > 0)
+                    {
+                        changeArmor = true;
+                    }
                     for (int i = 0; i < 16; i++)
                     {
                         inventoryObj.GetComponent<InventoryItems>().emptySlots[i].sprite =
