@@ -13,16 +13,23 @@ public class BookCollect : MonoBehaviour
     
     public static bool magicCollected = false;
     public static bool spellsCollected = false;
+
+    public GameObject spellsMessage;
+    public GameObject magicMessage;
+    public GameObject inventoryObj;
+    public AudioClip openBook;
     // Start is called before the first frame update
     void Start()
     {
         if (magicBook)
         {
             magicUI.SetActive(false);
+            magicMessage.SetActive(false);
         }
         if (spellsbook)
         {
             spellsUI.SetActive(false);
+            spellsMessage.SetActive(false);
         }
     }
 
@@ -36,7 +43,8 @@ public class BookCollect : MonoBehaviour
                 {
                     magicUI.SetActive(true);
                     magicCollected = true;
-                    Destroy(gameObject);
+                    StartCoroutine(DisplayMessageUI());
+                    //Destroy(gameObject);
                 }
             }
             
@@ -46,9 +54,40 @@ public class BookCollect : MonoBehaviour
                 {
                     spellsUI.SetActive(true);
                     spellsCollected = true;
-                    Destroy(gameObject);
+                    StartCoroutine(DisplayMessageUI());
+                    //Destroy(gameObject);
                 }
             }
         }
+    }
+
+    IEnumerator DisplayMessageUI()
+    {
+        yield return new WaitForSeconds(0.5f);
+        inventoryObj.GetComponent<AudioSource>().clip = openBook;
+        inventoryObj.GetComponent<AudioSource>().Play();
+        if (magicBook)
+        {
+            magicMessage.SetActive(true);
+        }
+
+        if (spellsbook)
+        {
+            spellsMessage.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(2);
+        
+        if (magicBook)
+        {
+            magicMessage.SetActive(false);
+        }
+
+        if (spellsbook)
+        {
+            spellsMessage.SetActive(false);
+        }
+        
+        Destroy(gameObject);
     }
 }
