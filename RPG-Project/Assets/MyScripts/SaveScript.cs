@@ -30,6 +30,7 @@ public class SaveScript : MonoBehaviour
     public static int strengthIncrease = 0;
     public static float armorValue = 0f;
     public static int enemiesOnScreen;
+    public static bool newGame = false;
 
     public static bool saving = false;
     public static bool continueData = false;
@@ -80,6 +81,31 @@ public class SaveScript : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
+        if (newGame)
+        {
+            pname = "player";
+            manaAmount = 1.0f;
+            staminaAmount = 1.0f;
+            strengthAmount = 0.1f;
+            manaPowerAmount = 0.1f;
+            staminaPowerAmount = 0.1f;
+            invisible = false;
+            invulnerable = false;
+            killAmount = 0;
+            weaponChoice = 0;
+            weaponChange = false;
+            carryingWeapon = false;
+            armor = 0;
+            changeArmor = false;
+            playerLevel = 0.1f;
+            weaponIncrease = 0;
+            playerHealth = 1.0f;
+            strengthIncrease = 0;
+            armorValue = 0;
+            enemiesOnScreen = 0;
+            BookCollect.magicCollected = false;
+            BookCollect.spellsCollected = false;
+        }
         if (continueData)
         {
             string fileLocation = Application.persistentDataPath + "/save.dat";

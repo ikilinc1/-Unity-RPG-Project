@@ -34,6 +34,8 @@ public class MainMenuScript : MonoBehaviour
     
     public void NewGame()
     {
+        SaveScript.playerHealth = 1.0f;
+        SaveScript.newGame = true;
         SceneManager.LoadScene(1);
     }
 

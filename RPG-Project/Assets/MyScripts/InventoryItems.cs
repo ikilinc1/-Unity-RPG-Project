@@ -114,28 +114,38 @@ public class InventoryItems : MonoBehaviour
         
         minimapView = GameObject.FindGameObjectWithTag("minimapItem");
         minimapCompass = GameObject.FindGameObjectWithTag("compass");
+
+        if (SaveScript.newGame)
+        {
+            redMushrooms = 0; 
+            purpleMushrooms = 0; 
+            brownMushrooms = 0; 
+            blueFlowers = 0; 
+            redFlowers = 0;
+            roots = 0;
+            leafDews = 0;
+            pinkEggs = 0;
+            bluePotions = 0;
+            purplePotions = 0;
+            greenPotions = 0;
+            redPotions = 0;
+            breads = 0;
+            cheese = 0;
+            meat = 0;
+            gold = 200;
+            newIcon = 0;
+            iconUpdate = false;
+        }
         
-        //TEMP
-        redMushrooms = 0; 
-        purpleMushrooms = 0; 
-        brownMushrooms = 0; 
-        blueFlowers = 0; 
-        redFlowers = 0;
-        roots = 0;
-        leafDews = 0;
-        pinkEggs = 0;
-        bluePotions = 0;
-        purplePotions = 0;
-        greenPotions = 0;
-        redPotions = 0;
-        breads = 0;
-        cheese = 0;
-        meat = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SaveScript.newGame)
+        {
+            SaveScript.newGame = false;
+        }
         if (playerAnim)
         {
             playerInfo = playerAnim.GetCurrentAnimatorStateInfo(1);
