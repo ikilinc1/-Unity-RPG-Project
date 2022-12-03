@@ -18,7 +18,7 @@ public class Cursors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cursorObject.transform.position = Input.mousePosition;
+        cursorObject.transform.position = new Vector3(Input.mousePosition.x + 10, Input.mousePosition.y - 30, 0.0f);
 
         if (Input.GetMouseButton(1))
         {

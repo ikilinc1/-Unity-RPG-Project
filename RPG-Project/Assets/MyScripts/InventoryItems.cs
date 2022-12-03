@@ -18,6 +18,9 @@ public class InventoryItems : MonoBehaviour
     public GameObject deedsScreen;
     public GameObject characterDisplay;
     public GameObject mapScreen;
+    
+    public GameObject optionsScreen;
+    private bool optionsOpen = false;
 
     public GameObject mapCam;
 
@@ -98,6 +101,7 @@ public class InventoryItems : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        optionsScreen.SetActive(false);
         inventoryMenu.SetActive(false);
         openBook.SetActive(false);
         closedBook.SetActive(true);
@@ -321,6 +325,22 @@ public class InventoryItems : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void OpenOptions()
+    {
+        if (!optionsOpen)
+        {
+            optionsScreen.SetActive(true);
+            Time.timeScale = 0;
+            optionsOpen = true;
+        }
+        else if (optionsOpen)
+        {
+            optionsScreen.SetActive(false);
+            Time.timeScale = 1;
+            optionsOpen = false;
+        }
+    }
+    
     public void OpenInventoryScreen()
     {
         statsScreen.SetActive(false);
