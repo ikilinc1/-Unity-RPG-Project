@@ -51,15 +51,17 @@ public class PlayerMove : MonoBehaviour
     private float currentHealth = 1.0f;
     public GameObject hitEffect;
     private WaitForSeconds hitOff = new WaitForSeconds(0.5f);
+
+    public GameObject aimObj;
     
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        ct = freeCam.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineTransposer>();
+        //ct = freeCam.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineTransposer>();
         cot = staticCam.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineOrbitalTransposer>();
-        currPos = ct.m_FollowOffset;
+        //currPos = ct.m_FollowOffset;
         freeCam.SetActive(true);
         staticCam.SetActive(false);
         SaveScript.spawnPoint = spawnPoint;
@@ -87,8 +89,20 @@ public class PlayerMove : MonoBehaviour
         
         // Get mouse position
         pos = Input.mousePosition;
-        ct.m_FollowOffset = currPos;
+        //ct.m_FollowOffset = currPos;
         //ct.m_FollowOffset = new Vector3(currPos.x, currPos.y * 3, currPos.x * 2);
+
+        if (Input.GetMouseButton(1))
+        {
+            if (Input.GetAxis("Mouse X") > 0)
+            {
+                aimObj.transform.Rotate(0,75 * Time.deltaTime,0);
+            }
+            if (Input.GetAxis("Mouse X") < 0)
+            {
+                aimObj.transform.Rotate(0,-75 * Time.deltaTime,0);
+            }
+        }
         
         // Switch on correct weapon
         if (SaveScript.weaponChange)
