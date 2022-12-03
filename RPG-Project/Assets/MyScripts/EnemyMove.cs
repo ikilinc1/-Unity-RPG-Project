@@ -36,6 +36,8 @@ public class EnemyMove : MonoBehaviour
     public float rotateSpeed = 40.0f;
 
     public GameObject coins;
+
+    private WaitForSeconds fadePause = new WaitForSeconds(1);
     
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,7 @@ public class EnemyMove : MonoBehaviour
         nav.avoidancePriority = Random.Range(5, 75);
         currentHealth = enemyHealth;
         audioPlayer = GetComponent<AudioSource>();
+        healthBar.CrossFadeAlpha(0,0,true);
     }
 
     // Update is called once per frame
@@ -140,12 +143,14 @@ public class EnemyMove : MonoBehaviour
 
             if (currentHealth > enemyHealth)
             {
+                healthBar.CrossFadeAlpha(1,0.01f,true);
                 anim.SetTrigger("hit");
                 currentHealth = enemyHealth;
                 audioPlayer.Play();
                 fillHealth = enemyHealth;
                 fillHealth /= 100.0f;
                 healthBar.fillAmount = fillHealth;
+                StartCoroutine(FadeHealthBar());
             }
         }
 
@@ -171,5 +176,9 @@ public class EnemyMove : MonoBehaviour
         SaveScript.killAmount++;
     }
 
-
+    IEnumerator FadeHealthBar()
+    {
+        yield return fadePause;
+        healthBar.CrossFadeAlpha(0,0.3f,true);
+    }
 }
