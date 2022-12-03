@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveScript : MonoBehaviour
 {
+    public static int instance = 0;
     public static int pchar = 0;
     public static string pname = "player";
     public static GameObject spawnPoint;
@@ -75,11 +76,24 @@ public class SaveScript : MonoBehaviour
     public int[] objectTypeS;
     
     private int checkAmount = 10;
-    
+
+    private void Awake()
+    {
+        instance++;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
+        if (instance > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+        
 
         if (newGame)
         {
